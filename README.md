@@ -47,3 +47,19 @@ JavaScript
 PHP
 MySQL
 Apache
+
+**Akun**
+
+👑 1. Akun Admin
+Username: admin
+Password: admin123
+Email: admin@gmail.com
+🏢 2. Akun Pemilik Tempat (Owner)
+Username: halohalo
+Password: halohalo
+Username: lindakeren
+Password: 12345678
+👤 3. Akun Pengunjung / User Biasa
+Username: vivivivi
+Password: 12345678
+Email: devitaamalia@gmail.com
