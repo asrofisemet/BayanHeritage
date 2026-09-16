@@ -24,6 +24,6 @@
     </p>
     <p class="my-2.5 text-base font-bold">Thank you for visiting our page, hope this website helps you make your itinerary on Lombok</p>
 </footer>
-<script src="<?= base_url('js/'.$js) ?>"></script>
+<script src="<?= base_url('js/'.$js) ?>?v=<?= time() ?>"></script>
 </body>
 </html>

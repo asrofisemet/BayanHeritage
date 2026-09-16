@@ -25,32 +25,32 @@ document.addEventListener("DOMContentLoaded", () => {
     const slidesData = [
       {
         image: "LandingPagePic1.jpg",
-        text: "Discover the beauty of Lombok<br>from stunning destinations<br>to delicious local cuisine",
+        text: "Discover the spiritual heritage of Lombok<br>through the timeless history of<br>the Bayan Ancient Mosque",
         positionClass: "justify-center items-center text-center",
       },
       {
-        image: "LandingPagePic2.png",
-        text: "Thousands of beaches to explore.",
+        image: "LandingPagePic2.jpg",
+        text: "The birthplace of Islam on the Island of a Thousand Mosques.",
         positionClass: "justify-end items-center text-right",
       },
       {
-        image: "LandingPagePic3.png",
-        text: "Stunning natural landscapes.",
+        image: "LandingPagePic3.jpg",
+        text: "Timeless traditional bamboo and thatched architecture.",
         positionClass: "justify-start items-center text-left",
       },
       {
-        image: "LandingPagePic4.png",
-        text: "Rich cultural heritage.",
+        image: "LandingPagePic4.jpg",
+        text: "A beautiful symbol of religious harmony and local wisdom.",
         positionClass: "justify-start items-end text-left",
       },
       {
-        image: "LandingPagePic5.png",
-        text: "Various local traditions.",
+        image: "LandingPagePic5.jpg",
+        text: "Witness the sacred rituals and Maulid Adat traditions.",
         positionClass: "justify-end items-start text-right",
       },
       {
-        image: "LandingPagePic6.png",
-        text: "Delightful authentic cuisine.",
+        image: "LandingPagePic6.jpg",
+        text: "Standing gracefully and preserving history since the 17th century.",
         positionClass: "justify-start items-center text-left",
       },
     ];
