@@ -125,10 +125,3 @@ _modules/*
 /results/
 /phpunit*.xml
 node_modules
-
-#-------------------------
-# Large Media Files (exceeds GitHub 100MB limit)
-#-------------------------
-public/Assets/*.mp4
-public/Assets/*.mov
-public/Assets/*.avi
