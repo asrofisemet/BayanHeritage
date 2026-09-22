@@ -22,7 +22,7 @@ module.exports = {
         "bg-img": "background-image",
       },
       backgroundImage: {
-        Landing: "url('./Assets/LandingPagePic1.jpg')",
+        Landing: "url('./Assets/bayan3.jpeg')",
       },
     },
   },
