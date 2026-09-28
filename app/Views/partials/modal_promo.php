@@ -1,9 +1,9 @@
 <?php // app/Views/partials/modal_promo.php ?>
 
 <div id="promoModal" class="fixed inset-0 bg-black bg-opacity-60 flex justify-center items-center z-50 p-4 hidden">
-    <div class="bg-white p-4 rounded-2xl shadow-2xl border border-[#5C3211]/30 sm:w-11/12 md:w-9/12 lg:w-7/12 max-w-full md:max-w-3xl lg:max-w-4xl relative text-[#5C3211]">
-        <div class="border border-[#5C3211] rounded-xl p-8 relative">
-            <button id="closePromoModal" class="absolute top-3 right-3 w-5 h-5 rounded-full flex items-center justify-center text-[#5C3211] hover:bg-gray-100 transition focus:outline-none">
+    <div class="bg-white p-4 rounded-2xl shadow-2xl border border-bh-border/30 sm:w-11/12 md:w-9/12 lg:w-7/12 max-w-full md:max-w-3xl lg:max-w-4xl relative text-bh-text">
+        <div class="border border-bh-border rounded-xl p-8 relative">
+            <button id="closePromoModal" class="absolute top-3 right-3 w-5 h-5 rounded-full flex items-center justify-center text-bh-text hover:bg-gray-100 transition focus:outline-none">
                 <i class="fas fa-xmark text-lg"></i>
             </button>
 
@@ -12,10 +12,10 @@
                 <?php if (!empty($promo)) : ?>
                     <?php foreach ($promo as $prom) : ?>
                         <div>
-                            <h3 class="font-bold text-xl text-[#5C3211] uppercase"><?= esc($prom['nama_promo']) ?></h3>
-                            <p class="text-[#5C3211] mt-1 mb-2 text-left font-light"><?= esc($prom['deskripsi_promo']) ?></p>
+                            <h3 class="font-bold text-xl text-bh-primary uppercase"><?= esc($prom['nama_promo']) ?></h3>
+                            <p class="text-bh-text-muted mt-1 mb-2 text-left font-light"><?= esc($prom['deskripsi_promo']) ?></p>
                             <?php if (!empty($prom['valid_until'])) : ?>
-                                <p class="text-lg text-[#5C3211] text-left">Valid until: <?= date('d F Y', strtotime($prom['valid_until'])) ?></p>
+                                <p class="text-lg text-bh-text text-left">Valid until: <?= date('d F Y', strtotime($prom['valid_until'])) ?></p>
                             <?php endif; ?>
 
                         </div>
@@ -30,13 +30,13 @@
                                 </form>
                             </div>
                         <?php endif; ?>
-                        <hr class="border-[#5C3211]">
+                        <hr class="border-bh-border">
                     <?php endforeach; ?>
                     <p class="pt-3 text-center">
                         That's all.
                     </p>
                 <?php else : ?>
-                    <p class="text-center text-[#5C3211] py-8">There's no promo yet.</p>
+                    <p class="text-center text-bh-text py-8">There's no promo yet.</p>
                 <?php endif; ?>
 
                 <div id="addPromoFormContainer" class="hidden pt-4">
@@ -71,14 +71,14 @@
                         </div>
                         <div class="flex justify-end gap-3 pt-4">
                             <button type="button" id="cancelAddPromoBtn" class="bg-gray-200 text-gray-700 px-4 py-2 rounded-md hover:bg-gray-300">Cancel</button>
-                            <button type="submit" class="bg-[#FF9800] text-white font-bold hover:bg-[#FF9800]/80 hover:text-white/80 px-7 py-1 rounded-full">Save Promo</button>
+                            <button type="submit" class="bg-bh-primary text-white font-bold hover:bg-bh-primary/80 hover:text-white/80 px-7 py-1 rounded-full">Save Promo</button>
                         </div>
                     </form>
                 </div>
                 </div>
             
             <?php if (isset($isOwner) && $isOwner) : ?>
-                <button id="addPromoItemBtn" title="Tambah Promo Baru" class="absolute px-4 m-2 bottom-5 right-4 w-14 h-14 text-[#FF9800] flex items-center justify-cente hover:bg-opacity-80 transition">
+                <button id="addPromoItemBtn" title="Tambah Promo Baru" class="absolute px-4 m-2 bottom-5 right-4 w-14 h-14 text-bh-accent-text flex items-center justify-cente hover:bg-opacity-80 transition">
                     <i class="fas fa-plus text-xl"></i>
                 </button>
             <?php endif; ?>

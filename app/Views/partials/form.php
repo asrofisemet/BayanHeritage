@@ -9,7 +9,7 @@
         Please check the answers are correct before submitting.
     </p>
     <form id="attractionForm" action="<?= site_url('formAddPlace/submit') ?>" method="post" enctype="multipart/form-data">
-        <div class="bg-white rounded-xl p-5 mb-4 shadow-md border border-[#F0D3B3]">
+        <div class="bg-white rounded-xl p-5 mb-4 shadow-md border border-bh-border">
             <label for="place_name">
                 Place name<span class="text-[#FF0000]">*</span>
             </label>
@@ -18,7 +18,7 @@
                 required placeholder="Answer" value="<?= old('place_name') ?>" />
                 <?= session()->getFlashdata('errors.place_name') ? '<p class="error-message text-red-500 text-sm mt-1">'.session()->getFlashdata('errors.place_name').'</p>' : '' ?>
         </div>
-        <div class="bg-white rounded-xl p-5 mb-4 shadow-md border border-[#F0D3B3]">
+        <div class="bg-white rounded-xl p-5 mb-4 shadow-md border border-bh-border">
             <label for="category">Category<span class="text-[#FF0000]">*</span></label>
             <div class="flex items-center gap-8 pt-4">
                 <label class="flex items-center gap-2 cursor-pointer text-gray-600">
@@ -42,7 +42,7 @@
             </div>
             <?= session()->getFlashdata('errors.category') ? '<p class="error-message text-red-500 text-sm mt-1">'.session()->getFlashdata('errors.category').'</p>' : '' ?>
         </div>
-        <div class="bg-white rounded-xl p-5 mb-4 shadow-md border border-[#F0D3B3]">
+        <div class="bg-white rounded-xl p-5 mb-4 shadow-md border border-bh-border">
             <label for="district_city">
                 District/city<span class="text-[#FF0000]">*</span>
             </label>
@@ -60,49 +60,49 @@
             </select>
             <?= session()->getFlashdata('errors.district_city') ? '<p class="error-message text-red-500 text-sm mt-1">'.session()->getFlashdata('errors.district_city').'</p>' : '' ?>
         </div>
-        <div class="bg-white rounded-xl p-5 mb-4 shadow-md border border-[#F0D3B3]">
+        <div class="bg-white rounded-xl p-5 mb-4 shadow-md border border-bh-border">
             <label for="subdistrict">Subdistrict<span class="text-[#FF0000]">*</span></label>
             <input type="text" id="subdistrict" name="subdistrict"
                 class="w-full bg-transparent border-b border-[#D1D5DB] py-2 px-[0.1rem] outline-none transition-colors duration-200 ease-in-out focus:border-[#F59E0B] placeholder-[#9CA3AF]"
                 required placeholder="Answer" value="<?= old('subdistrict') ?>" />
             <?= session()->getFlashdata('errors.subdistrict') ? '<p class="error-message text-red-500 text-sm mt-1">'.session()->getFlashdata('errors.subdistrict').'</p>' : '' ?>
         </div>
-        <div class="bg-white rounded-xl p-5 mb-4 shadow-md border border-[#F0D3B3]">
+        <div class="bg-white rounded-xl p-5 mb-4 shadow-md border border-bh-border">
             <label for="village">Village<span class="text-[#FF0000]">*</span></label>
             <input type="text" id="village" name="village"
                 class="w-full bg-transparent border-b border-[#D1D5DB] py-2 px-[0.1rem] outline-none transition-colors duration-200 ease-in-out focus:border-[#F59E0B] placeholder-[#9CA3AF]"
                 required placeholder="Answer" value="<?= old('village') ?>" />
             <?= session()->getFlashdata('errors.village') ? '<p class="error-message text-red-500 text-sm mt-1">'.session()->getFlashdata('errors.village').'</p>' : '' ?>
         </div>
-        <div class="bg-white rounded-xl p-5 mb-4 shadow-md border border-[#F0D3B3]">
+        <div class="bg-white rounded-xl p-5 mb-4 shadow-md border border-bh-border">
             <label for="street">Street<span class="text-[#FF0000]">*</span></label>
             <input type="text" id="street" name="street"
                 class="w-full bg-transparent border-b border-[#D1D5DB] py-2 px-[0.1rem] outline-none transition-colors duration-200 ease-in-out focus:border-[#F59E0B] placeholder-[#9CA3AF]"
                 required rows="1" placeholder="Answer" value="<?= old('street') ?>" />
             <?= session()->getFlashdata('errors.street') ? '<p class="error-message text-red-500 text-sm mt-1">'.session()->getFlashdata('errors.street').'</p>' : '' ?>
         </div>
-        <div class="bg-white rounded-xl p-5 mb-4 shadow-md border border-[#F0D3B3]">
+        <div class="bg-white rounded-xl p-5 mb-4 shadow-md border border-bh-border">
             <label for="gmaps">Google Map Location<span class="text-[#FF0000]">*</span></label>
             <input type="text" id="gmaps" name="gmaps"
                 class="w-full bg-transparent border-b border-[#D1D5DB] py-2 px-[0.1rem] outline-none transition-colors duration-200 ease-in-out focus:border-[#F59E0B] placeholder-[#9CA3AF]"
                 required placeholder="Paste Google Map location link here" value="<?= old('gmaps') ?>" />
             <?= session()->getFlashdata('errors.gmaps') ? '<p class="error-message text-red-500 text-sm mt-1">'.session()->getFlashdata('errors.gmaps').'</p>' : '' ?>
         </div>
-        <div class="bg-white rounded-xl p-5 mb-4 shadow-md border border-[#F0D3B3]">
+        <div class="bg-white rounded-xl p-5 mb-4 shadow-md border border-bh-border">
             <label for="description">Place description<span class="text-[#FF0000]">*</span></label>
             <textarea id="description" name="description"
                 class="w-full bg-transparent border-b border-[#D1D5DB] py-2 px-[0.1rem] outline-none transition-colors duration-200 ease-in-out focus:border-[#F59E0B] placeholder-[#9CA3AF] resize-y"
                 required rows="1" placeholder="Answer"><?= old('description') ?></textarea>
             <?= session()->getFlashdata('errors.description') ? '<p class="error-message text-red-500 text-sm mt-1">'.session()->getFlashdata('errors.description').'</p>' : '' ?>
         </div>
-        <div class="bg-white rounded-xl p-5 mb-4 shadow-md border border-[#F0D3B3]">
+        <div class="bg-white rounded-xl p-5 mb-4 shadow-md border border-bh-border">
             <label for="harga_tiket">Entrance Ticket Price</label>
             <input type="text" id="harga_tiket" name="harga_tiket"
                 class="w-full bg-transparent border-b border-[#D1D5DB] py-2 px-[0.1rem] outline-none transition-colors duration-200 ease-in-out focus:border-[#F59E0B] placeholder-[#9CA3AF]"
                 placeholder="Answer" value="<?= old('harga_tiket') ?>" />
             <?= session()->getFlashdata('errors.harga_tiket') ? '<p class="error-message text-red-500 text-sm mt-1">'.session()->getFlashdata('errors.harga_tiket').'</p>' : '' ?>
         </div>
-        <div class="bg-white rounded-xl p-5 mb-4 shadow-md border border-[#F0D3B3]">
+        <div class="bg-white rounded-xl p-5 mb-4 shadow-md border border-bh-border">
             <label>Photo(s)</label>
             <div id="fileUploadVisual"
                 class="group flex border-b-0 pb-0 items-center py-2 cursor-pointer transition-all duration-200">
@@ -122,7 +122,7 @@
         </div>
 
         <div class="mt-8 mb-4 max-w-xs mx-auto text-center"> 
-            <button type="submit" class="bg-[#FF9800] text-white hover:bg-[#FF9800]/80 hover:text-white/80 px-7 py-1 rounded-full shadow font-semibold transition duration-200">
+            <button type="submit" class="bg-bh-primary text-white hover:bg-bh-primary/80 hover:text-white/80 px-7 py-1 rounded-full shadow font-semibold transition duration-200">
                 Submit
             </button>
         </div>
@@ -141,35 +141,35 @@
     </p>
     <form action="<?= site_url('formKlaim/submit') ?>" method="post" enctype="multipart/form-data">
         <input type="hidden" name="ID_tempat" value="<?= esc($idTempat ?? '') ?>">
-        <div class="bg-white rounded-xl p-5 mb-4 shadow-md border border-[#F0D3B3]">
+        <div class="bg-white rounded-xl p-5 mb-4 shadow-md border border-bh-border">
             <label for="full_name">Full name<span class="text-[#FF0000]">*</span></label>
             <input type="text" id="full_name" name="nama_lengkap"
                 class="w-full bg-transparent border-b border-[#D1D5DB] py-2 px-[0.1rem] outline-none transition-colors duration-200 ease-in-out focus:border-[#F59E0B] placeholder-[#9CA3AF]"
                 required placeholder="Answer" />
                 <?= session()->getFlashdata('errors.full_name') ? '<p class="error-message text-red-500 text-sm mt-1">'.session()->getFlashdata('errors.full_name').'</p>' : '' ?>
         </div>
-        <div class="bg-white rounded-xl p-5 mb-4 shadow-md border border-[#F0D3B3]">
+        <div class="bg-white rounded-xl p-5 mb-4 shadow-md border border-bh-border">
             <label for="phone_number">Phone number<span class="text-[#FF0000]">*</span></label>
             <input type="text" id="phone_number" name="no_hp"
                 class="w-full bg-transparent border-b border-[#D1D5DB] py-2 px-[0.1rem] outline-none transition-colors duration-200 ease-in-out focus:border-[#F59E0B] placeholder-[#9CA3AF]"
                 required placeholder="Answer" />
                 <?= session()->getFlashdata('errors.phone_number') ? '<p class="error-message text-red-500 text-sm mt-1">'.session()->getFlashdata('errors.phone_number').'</p>' : '' ?>
         </div>
-        <div class="bg-white rounded-xl p-5 mb-4 shadow-md border border-[#F0D3B3]">
+        <div class="bg-white rounded-xl p-5 mb-4 shadow-md border border-bh-border">
             <label for="email">Email<span class="text-[#FF0000]">*</span></label>
             <input type="text" id="email" name="email"
                 class="w-full bg-transparent border-b border-[#D1D5DB] py-2 px-[0.1rem] outline-none transition-colors duration-200 ease-in-out focus:border-[#F59E0B] placeholder-[#9CA3AF]"
                 required placeholder="Answer" />
                 <?= session()->getFlashdata('errors.email') ? '<p class="error-message text-red-500 text-sm mt-1">'.session()->getFlashdata('errors.email').'</p>' : '' ?>
         </div>
-        <div class="bg-white rounded-xl p-5 mb-4 shadow-md border border-[#F0D3B3]">
+        <div class="bg-white rounded-xl p-5 mb-4 shadow-md border border-bh-border">
             <label for="taxpayer">Taxpayer Identification Number<span class="text-[#FF0000]">*</span></label>
             <input type="text" id="taxpayer" name="npwp"
                 class="w-full bg-transparent border-b border-[#D1D5DB] py-2 px-[0.1rem] outline-none transition-colors duration-200 ease-in-out focus:border-[#F59E0B] placeholder-[#9CA3AF]"
                 required placeholder="Answer" />
                 <?= session()->getFlashdata('errors.taxpayer') ? '<p class="error-message text-red-500 text-sm mt-1">'.session()->getFlashdata('errors.taxpayer').'</p>' : '' ?>
         </div>
-        <div class="bg-white rounded-xl p-5 mb-4 shadow-md border border-[#F0D3B3]">
+        <div class="bg-white rounded-xl p-5 mb-4 shadow-md border border-bh-border">
             <label>Supporting document(s)</label>
             <div id="fileUploadVisualClaim"
                 class="group flex border-b-0 pb-0 items-center py-2 cursor-pointer transition-all duration-200">
@@ -189,7 +189,7 @@
         </div>
 
         <div class="mt-8 mb-4 max-w-xs mx-auto text-center"> 
-            <button type="submit" class="bg-[#FF9800] text-white hover:bg-[#FF9800]/80 hover:text-white/80 px-7 py-1 rounded-full shadow font-semibold transition duration-200">
+            <button type="submit" class="bg-bh-primary text-white hover:bg-bh-primary/80 hover:text-white/80 px-7 py-1 rounded-full shadow font-semibold transition duration-200">
                 Submit
             </button>
         </div>

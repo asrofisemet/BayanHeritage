@@ -40,17 +40,17 @@ foreach ($categories as $key => $details) {
                 </h1>
             <?php endif; ?>
         <?php else : ?>
-            <a href="<?= $path ?>" class="absolute top-0 left-0 text-[#5C3211] hover:text-gray-200">
+            <a href="<?= $path ?>" class="absolute top-0 left-0 text-bh-text hover:text-gray-200">
                 <i class="fa-solid fa-arrow-left text-2xl"></i>
             </a>
-            <h1 class="text-3xl md:text-4xl font-bold text-[#5C3211] text-center mb-8 [text-shadow:1px_1px_3px_rgba(0,0,0,0.5)]">
+            <h1 class="text-3xl md:text-4xl font-bold text-bh-primary text-center mb-8 [text-shadow:1px_1px_3px_rgba(0,0,0,0.5)]">
             <?= esc($tempat['nama_tempat']) ?>
             </h1>
         <?php endif; ?>
     </div>
     <?php if ((isset($isOwner) && $isOwner) || session()->get('user_role') === 'admin') : ?>
         <div class="text-right pb-4">
-            <button type="button" id="openEditTempatModal" class="bg-[#FF9800] text-white font-bold hover:bg-[#FF9800]/80 hover:text-white/80 px-7 py-1 rounded-full">
+            <button type="button" id="openEditTempatModal" class="bg-bh-primary text-white font-bold hover:bg-bh-primary/80 hover:text-white/80 px-7 py-1 rounded-full">
                 Edit
             </button>
         </div>
@@ -59,20 +59,20 @@ foreach ($categories as $key => $details) {
         <?php if ($tempat['kategori'] === 'culinary' && session()->get('isLoggedIn') && !$isOwner  && $tempat['ID_akun'] === NULL) : ?>
              <div class="flex justify-end items-center space-x-3 mb-3">
                 <span class="text-base font-bold text-white text-shadow-sm" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.4);">Own this place?</span>
-                <div id="openClaimBtn" class="bg-[#FF9800] text-white font-bold hover:bg-[#FF9800]/80 hover:text-white/80 px-7 py-1 rounded-full cursor-pointer">
+                <div id="openClaimBtn" class="bg-bh-primary text-white font-bold hover:bg-bh-primary/80 hover:text-white/80 px-7 py-1 rounded-full cursor-pointer">
                     Claim
                 </div>
             </div>
         <?php endif; ?>
 
-        <div class="bg-white p-6 rounded-2xl shadow-lg mb-8 border border-[#F0B845]">
+        <div class="bg-white p-6 rounded-2xl shadow-lg mb-8 border border-bh-border">
             
             <div class="flex flex-col md:flex-row gap-6">
                 <div class="md:w-1/3 flex-shrink-0">
                     <img src="<?= base_url('Assets/' . esc($tempat['foto'])) ?>" alt="<?= esc($tempat['nama_tempat']) ?>" class="rounded-xl w-full h-auto object-cover shadow-md mb-3">
-                    <p class="text-sm text-[#5C3211] mb-1 font-bold"><?= esc($tempat['kelurahan']) ?>, Kec. <?= esc($tempat['kecamatan']) ?>, Kabupaten <?= esc($tempat['kabupaten_kota']) ?>, Nusa Tenggara Barat</p>
+                    <p class="text-sm text-bh-brown mb-1 font-bold"><?= esc($tempat['kelurahan']) ?>, Kec. <?= esc($tempat['kecamatan']) ?>, Kabupaten <?= esc($tempat['kabupaten_kota']) ?>, Nusa Tenggara Barat</p>
                     <?php if (!empty($tempat['google_maps'])) : ?>
-                    <a href="<?= esc($tempat['google_maps']) ?>" target="_blank" class="text-[#5C3211] text-sm font-medium hover:underline flex items-center gap-1 mt-auto">
+                    <a href="<?= esc($tempat['google_maps']) ?>" target="_blank" class="text-bh-text text-sm font-medium hover:underline flex items-center gap-1 mt-auto">
                         <span class="relative top-0.5">Google Maps</span>
                         <i class="fa-solid fa-location-dot"></i>
                     </a>
@@ -80,32 +80,32 @@ foreach ($categories as $key => $details) {
                     
                     <?php if ($tempat['kategori'] === 'culinary') : ?>
                     <div class="flex items-center gap-x-3 mt-3">
-                        <div id="openMenu" class="bg-[#FF9800] text-white font-bold hover:bg-[#FF9800]/80 hover:text-white/80 px-7 py-1 rounded-full cursor-pointer">
+                        <div id="openMenu" class="bg-bh-primary text-white font-bold hover:bg-bh-primary/80 hover:text-white/80 px-7 py-1 rounded-full cursor-pointer">
                             Menu
                         </div>
-                        <div id="openPromo" class="bg-[#FF9800] text-white font-bold hover:bg-[#FF9800]/80 hover:text-white/80 px-7 py-1 rounded-full cursor-pointer">
+                        <div id="openPromo" class="bg-bh-primary text-white font-bold hover:bg-bh-primary/80 hover:text-white/80 px-7 py-1 rounded-full cursor-pointer">
                             Promo
                         </div>
                     </div>
                     <?php endif; ?>
                 </div>
                 <div class="md:w-2/3">
-                    <div class="text-yellow-500 my-1 text-lg rating" data-rating="<?= number_format($tempat['average_rating'] ?? 0, 1) ?>"></div>
+                    <div class="text-bh-accent my-1 text-lg rating" data-rating="<?= number_format($tempat['average_rating'] ?? 0, 1) ?>"></div>
                     <div class="grid grid-cols-[auto_1fr] gap-x-4 gap-y-3 mt-4">
-                        <p class="text-[#5C3211] text-base font-light">Category</p>
+                        <p class="text-bh-text-muted text-base font-light">Category</p>
                         <?php if ($tempat['kategori'] === 'culinary') : ?>
-                            <p class="text-[#5C3211] font-medium text-base">Culinary Site</p>
+                            <p class="text-bh-text font-medium text-base">Culinary Site</p>
                         <?php else : ?>
-                            <p class="text-[#5C3211] font-medium text-base">Tourist Attraction</p>
+                            <p class="text-bh-text font-medium text-base">Tourist Attraction</p>
                         <?php endif; ?>
 
                         <?php if ($tempat['kategori'] !== 'culinary' && !empty($tempat['harga_tiket'])) : ?>
-                        <p class="text-[#5C3211] text-base font-light">Ticket</p>
-                        <p class="text-[#5C3211] font-medium text-base">Rp<?= number_format($tempat['harga_tiket'], 0, ',', '.') ?></p>
+                        <p class="text-bh-text-muted text-base font-light">Ticket</p>
+                        <p class="text-bh-text font-medium text-base">Rp<?= number_format($tempat['harga_tiket'], 0, ',', '.') ?></p>
                         <?php endif; ?>
 
-                        <p class="text-[#5C3211] text-base mt-0.5 font-light">Description</p>
-                        <p class="text-base text-[#5C3211] leading-relaxed text-justify">
+                        <p class="text-bh-text-muted text-base mt-0.5 font-light">Description</p>
+                        <p class="text-base text-bh-text leading-relaxed text-justify">
                             <?= esc($tempat['deskripsi']) ?>
                         </p>
                     </div>
@@ -127,9 +127,9 @@ foreach ($categories as $key => $details) {
     <?php foreach ($filter_buttons as $button) : ?>
         <a href="<?= $button['url'] ?>"
         <?php if ($button['is_active']) :?>
-            class="py-2 px-6 rounded-full cursor-pointer transition flex items-center gap-2 shadow-md bg-[#FF9800] text-white font-normal"
+            class="py-2 px-6 rounded-full cursor-pointer transition flex items-center gap-2 shadow-md bg-bh-primary text-white font-normal"
         <?php else : ?>
-            class="py-2 px-6 rounded-full cursor-pointer transition flex items-center gap-2 shadow-md bg-white text-[#FF9800]"
+            class="py-2 px-6 rounded-full cursor-pointer transition flex items-center gap-2 shadow-md bg-white text-bh-accent-text"
         <?php endif; ?>>
             <i class="<?= $button['icon'] ?>"></i>
             <span class="relative top-px"><?= $button['label'] ?></span>
@@ -139,16 +139,16 @@ foreach ($categories as $key => $details) {
 
 <div class="search-container flex justify-center mb-5">
     <form action="<?= $path ?>" method="get" class="relative w-full max-w-[500px]">
-        <input type="text" id="search_input" name="search" class="search-box w-full py-2.5 px-6 pr-12 border-none rounded-full bg-white text-base text-[#FF8400] outline-none shadow-md placeholder:text-[#5C3211]/50" placeholder="Search..." value="<?= esc($current_search_term ?? '') ?>">
+        <input type="text" id="search_input" name="search" class="search-box w-full py-2.5 px-6 pr-12 border-none rounded-full bg-white text-base text-[#FF8400] outline-none shadow-md placeholder:text-bh-text/50" placeholder="Search..." value="<?= esc($current_search_term ?? '') ?>">
         <button type="submit" id="searchButton" class="absolute right-3 top-1/2 -translate-y-1/2 flex items-center justify-center w-8 h-8 rounded-full cursor-pointer transition border-none bg-transparent p-0">
-            <i class="fa-solid fa-magnifying-glass text-[#F4A261] hover:opacity-45 text-lg"></i>
+            <i class="fa-solid fa-magnifying-glass text-bh-accent-text hover:opacity-45 text-lg"></i>
         </button>
     </form>
 </div>
 
 <?php if (!empty($current_search_term) || !empty($active_category)) : ?>
     <?php if (!empty($current_search_term)) : ?>
-    <h3 class="text-2xl font-bold text-[#5C3211] mb-4 text-center">
+    <h3 class="text-2xl font-bold text-bh-primary mb-4 text-center">
         Search Results for: "<?= esc($current_search_term) ?>"
     </h3>
     <?php endif; ?>
@@ -159,30 +159,30 @@ foreach ($categories as $key => $details) {
                               site_url('home?show=detail&id=' . $tempat['ID_tempat']) : 
                               site_url('/?show=detail&id=' . $tempat['ID_tempat']); 
                 ?>
-                <div class="bg-white rounded-xl p-4 flex items-center shadow-md border border-[#F0D3B3] gap-4">
+                <div class="bg-white rounded-xl p-4 flex items-center shadow-md border border-bh-border gap-4">
                     <img src="<?= base_url('Assets/' . esc($tempat['foto'])) ?>" alt="<?= esc($tempat['nama_tempat']) ?>" class="w-32 h-32 object-cover rounded-lg flex-shrink-0">
                     
                     <div class="flex-grow flex flex-col self-stretch">
                         <div>
-                            <h2 class="text-lg font-bold text-[#5C3211] text-left"><?= esc($tempat['nama_tempat']) ?></h2>
-                            <div class="text-yellow-500 my-1 text-sm rating" data-rating="<?= number_format($tempat['average_rating'] ?? 0, 1) ?>"></div>
-                            <p class="text-sm text-[#5C3211] line-clamp-2 text-left">
+                            <h2 class="text-lg font-bold text-bh-primary text-left"><?= esc($tempat['nama_tempat']) ?></h2>
+                            <div class="text-bh-accent my-1 text-sm rating" data-rating="<?= number_format($tempat['average_rating'] ?? 0, 1) ?>"></div>
+                            <p class="text-sm text-bh-text-muted line-clamp-2 text-left">
                                 <?= esc($tempat['deskripsi']) ?>
                             </p>
                         </div>
-                        <a href="<?= $detailUrl ?>"  class="text-[#5C3211] text-sm font-medium hover:underline flex items-center gap-1 mt-auto">
+                        <a href="<?= $detailUrl ?>"  class="text-bh-text text-sm font-medium hover:underline flex items-center gap-1 mt-auto">
                             <span class="relative top-0.5">See details</span>
                         </a>
                     </div>
                 </div>
             <?php endforeach; ?>
         <?php else : ?>
-            <p class="col-span-3 text-center text-[#5C3211]">No Result Found.</p>
+            <p class="col-span-3 text-center text-bh-text">No Result Found.</p>
         <?php endif; ?>
     </div>
 
 <?php else : ?>
-    <div id="awal" class="space-y-6 text-[#5C3211]">
+    <div id="awal" class="space-y-6 text-bh-text">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 flex-grow">
             <?php if (!empty($destinasi) && is_array($destinasi)) : ?>
                 <?php foreach ($destinasi as $tempat) : 
@@ -190,7 +190,7 @@ foreach ($categories as $key => $details) {
                                   site_url('home?show=detail&id=' . $tempat['ID_tempat']) : 
                                   site_url('/?show=detail&id=' . $tempat['ID_tempat']); 
                     ?>
-                    <div class="destination-card bg-[#FFFFFF] rounded-xl overflow-hidden shadow-lg transition duration-300 hover:-translate-y-1.5 hover:shadow-2xl cursor-pointer flex flex-col">
+                    <div class="destination-card bg-bh-surface rounded-xl overflow-hidden shadow-lg transition duration-300 hover:-translate-y-1.5 hover:shadow-2xl cursor-pointer flex flex-col">
                         
                         <img src="<?= base_url('Assets/' . esc($tempat['foto'])) ?>" alt="<?= esc($tempat['nama_tempat']) ?>" class="w-full h-52 object-cover">
                         
@@ -199,7 +199,7 @@ foreach ($categories as $key => $details) {
                                 <?php
                                     $rating = number_format($tempat['average_rating'] ?? 0, 1);
                                 ?>
-                                <div class="text-yellow-500 text-sm rating" data-rating="<?= esc($rating) ?>"></div> 
+                                <div class="text-bh-accent text-sm rating" data-rating="<?= esc($rating) ?>"></div> 
                                 <a href="<?= $detailUrl ?>" class="text-xs font-medium hover:underline">See details</a>
                             </div>
                         </div>
@@ -215,7 +215,7 @@ foreach ($categories as $key => $details) {
 <?php endif; ?>
 
 <?php if (!isset($show_detail_tempat) || $show_detail_tempat === false) : ?>
-    <div class="mt-8 flex justify-center text-[#FF9800] font-bold">
+    <div class="mt-8 flex justify-center text-bh-accent-text font-bold">
         <?php if ($pager) : ?>
             <?= $pager->links() ?>
         <?php endif ?>
@@ -255,8 +255,8 @@ document.addEventListener('DOMContentLoaded', function() {
         if (isNaN(rating)) return;
         let starsHTML = '';
         for (let i = 1; i <= 5; i++) {
-            if (i <= rating) starsHTML += '<i class="fas fa-star text-yellow-500"></i>';
-            else if (i - 0.5 <= rating) starsHTML += '<i class="fas fa-star-half-alt text-yellow-500"></i>';
+            if (i <= rating) starsHTML += '<i class="fas fa-star" style="color: #F59E0B;"></i>';
+            else if (i - 0.5 <= rating) starsHTML += '<i class="fas fa-star-half-alt" style="color: #F59E0B;"></i>';
             else starsHTML += '<i class="far fa-star text-gray-400"></i>';
         }
         element.innerHTML = starsHTML;

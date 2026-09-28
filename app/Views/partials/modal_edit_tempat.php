@@ -1,9 +1,9 @@
 <?php // app/Views/partials/modal_edit_tempat.php ?>
 
 <div id="editTempatModal" class="fixed inset-0 bg-black bg-opacity-60 flex justify-center items-center z-50 p-4 hidden">
-    <div class="bg-white p-4 rounded-2xl shadow-2xl border border-[#5C3211]/30 w-full max-w-3xl relative text-[#5C3211]">
-        <div class="border border-[#5C3211] rounded-xl p-6 relative">
-            <button id="closeEditTempatModal" type="button" class="absolute top-3 right-3 w-8 h-8  flex items-center justify-center text-[#5C3211] hover:opacity-50 transition">
+    <div class="bg-white p-4 rounded-2xl shadow-2xl border border-bh-border/30 w-full max-w-3xl relative text-bh-text">
+        <div class="border border-bh-border rounded-xl p-6 relative">
+            <button id="closeEditTempatModal" type="button" class="absolute top-3 right-3 w-8 h-8  flex items-center justify-center text-bh-text-muted hover:opacity-50 transition">
                 <i class="fas fa-xmark text-lg"></i>
             </button>
             
@@ -35,7 +35,7 @@
                 
                 <div class="flex justify-end gap-4 pt-4">
                     <button type="button" id="cancelEditTempatBtn" class="bg-gray-300 text-gray-800 px-4 py-2 rounded-md">Cancel</button>
-                    <button type="submit" class="bg-[#FF9800] text-white font-bold hover:bg-[#FF9800]/80 hover:text-white/80 px-7 py-1 rounded-full">Save Change</button>
+                    <button type="submit" class="bg-bh-primary text-white font-bold hover:bg-bh-primary/80 hover:text-white/80 px-7 py-1 rounded-full">Save Change</button>
                 </div>
             </form>
         </div>

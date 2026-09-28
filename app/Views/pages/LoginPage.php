@@ -10,11 +10,11 @@
 <body class="min-h-screen flex justify-center items-center font-jaldi bg-Landing bg-cover h-screen">
     <div class="absolute inset-0 w-full h-full backdrop-blur-sm flex justify-center items-center">
         <div class="bg-[#FFffff] p-8 rounded-[15px] shadow-lg text-center w-[400px] relative z-10">
-            <a href="<?= site_url('landing') ?>" class="text-left flex justify-start text-[#5C3211] hover:text-gray-200">
+            <a href="<?= site_url('landing') ?>" class="text-left flex justify-start text-bh-text hover:text-gray-200">
                 <i class="fa-solid fa-arrow-left text-2xl"></i>
             </a>
 
-            <h2 class="text-[22px] font-extrabold text-[#5C3211] mb-5 tracking-wider">Login</h2>
+            <h2 class="text-[22px] font-extrabold text-bh-primary mb-5 tracking-wider">Login</h2>
 
             <?php if(session()->getFlashdata('error')): ?>
                 <div class="alert-error" style="padding: 10px; background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; margin-bottom: 16px;">
@@ -34,7 +34,7 @@
                     type="text" 
                     id="username"
                     name="username"
-                    class= "bg-[#FFFFFF] text-[#5C3211] w-full p-2.5 my-2.5 border border-[#D7D5BA] rounded-md bg-lombok-bg text-sm placeholder:text-[#5C3211] pr-10 focus:outline-[#D7D5BA]" 
+                    class= "bg-bh-surface text-bh-text-muted w-full p-2.5 my-2.5 border border-bh-border rounded-md bg-lombok-bg text-sm placeholder:text-bh-text pr-10 focus:outline-[#D7D5BA]" 
                     placeholder="Username">
 
                 <div class="relative w-full">
@@ -42,10 +42,10 @@
                         type="password"
                         id="password" 
                         name="password"
-                        class="bg-[#FFFFFF] text-[#5C3211] w-full p-2.5 my-2.5 border border-[#D7D5BA] rounded-md bg-lombok-bg text-sm placeholder:text-[#5C3211] pr-10 focus:outline-[#D7D5BA]" 
+                        class="bg-bh-surface text-bh-text-muted w-full p-2.5 my-2.5 border border-bh-border rounded-md bg-lombok-bg text-sm placeholder:text-bh-text pr-10 focus:outline-[#D7D5BA]" 
                         placeholder="Password"> 
                         <div class="absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5">
-                        <i class="fas fa-eye-slash font-normal text-[#5C3211] hover:text-gray-700 cursor-pointer" id="togglePasswordIcon"></i>
+                        <i class="fas fa-eye-slash font-normal text-bh-text hover:text-gray-700 cursor-pointer" id="togglePasswordIcon"></i>
                         </div>
                 </div>
 
@@ -60,9 +60,9 @@
                 </button>
             </form>
 
-            <p class="text-xs text-[#5C3211] mt-5">
+            <p class="text-xs text-bh-text mt-5">
                 Don't have any account?
-                <a href="<?= base_url('/signup') ?>" class="font-normal text-[#F4A261] no-underline hover:text-blue-600"> 
+                <a href="<?= base_url('/signup') ?>" class="font-normal text-bh-accent-text no-underline hover:text-blue-600"> 
                     Sign Up
                 </a>
             </p>

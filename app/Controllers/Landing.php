@@ -89,4 +89,18 @@ class Landing extends BaseController
         
         return view('pages/LandingPage', $data);
     }
+
+    /**
+     * Halaman showcase Bayan Heritage
+     * URL: /heritage
+     */
+    public function heritagePage()
+    {
+        $data = [
+            'title' => 'Bayan Heritage — Masjid Kuno Bayan Beleq',
+            'js'    => 'Landing.js',
+        ];
+
+        return view('pages/BayanHeritagePage', $data);
+    }
 }

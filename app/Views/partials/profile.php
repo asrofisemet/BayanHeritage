@@ -28,11 +28,11 @@
         <script> setTimeout(() => { const alertDiv = document.querySelector('.alert'); if(alertDiv) alertDiv.remove(); }, 5000); </script>
     <?php endif; ?>
 
-    <div id="containerProfile" class="bg-[#FFFFFF] rounded-xl p-4 flex items-center justify-between shadow-md overflow-hidden mt-8 border border-[#F0D3B3]">
+    <div id="containerProfile" class="bg-bh-surface rounded-xl p-4 flex items-center justify-between shadow-md overflow-hidden mt-8 border border-bh-border">
         <div id="profilPage" class="flex items-center w-full relative">
             <?php if (isset($user_role)) : ?>
                 <?php if ($user_role !== 'admin') : ?>
-                <button id="editProfileBtn" class="absolute top-4 right-4 bg-[#FF9800] text-white hover:bg-[#FF9800]/80 hover:text-white/80 px-7 py-1 rounded-full shadow font-semibold flex items-center gap-2 transition">Edit</button>
+                <button id="editProfileBtn" class="absolute top-4 right-4 bg-bh-primary text-white hover:bg-bh-primary/80 hover:text-white/80 px-7 py-1 rounded-full shadow font-semibold flex items-center gap-2 transition">Edit</button>
                 <?php endif; ?>
             <?php endif; ?>
             <?php if(session()->get('foto_profil') !== null) :?>
@@ -44,19 +44,19 @@
                 <?php if (isset($user_role)) : ?>
                     <?php if ($user_role === 'pemilik') : ?>
                     <div class="w-24 bg-blue-500 text-center text-white rounded-full px-2 py-1 flex items-center gap-2 mb-2">
-                        <i class="fas fa-star text-base font-semibold"></i>
+                        <i class="fas fa-star text-base font-semibold" style="color: #F59E0B;"></i>
                         <span class="pt-1"> Owner </span>
                     </div>
                     <?php endif; ?>
                 <?php endif; ?>
 
                 <?php if ($user_role === 'admin') : ?>
-                    <span class="text-5xl font-normal text-[#5C3211]">Admin</span>
+                    <span class="text-5xl font-normal text-bh-text">Admin</span>
                 <?php else : ?>
-                    <span class="text-5xl font-normal text-[#5C3211]"><?= esc(session()->get('username')) ; ?></span>
+                    <span class="text-5xl font-normal text-bh-text"><?= esc(session()->get('username')) ; ?></span>
                     <div class="flex items-center mt-1 gap-4">
-                        <span class="text-xl text-[#5C3211] font-normal"><?= esc(session()->get('nama_depan')) ; ?> <?= esc(session()->get('nama_belakang')) ; ?></span>
-                        <span class="text-lg text-[#5C3211] font-light"><?= esc(session()->get('email') ?? '') ; ?></span>
+                        <span class="text-xl text-bh-text font-normal"><?= esc(session()->get('nama_depan')) ; ?> <?= esc(session()->get('nama_belakang')) ; ?></span>
+                        <span class="text-lg text-bh-text-muted font-light"><?= esc(session()->get('email') ?? '') ; ?></span>
                     </div>
                 <?php endif; ?>
             </div>
@@ -67,7 +67,7 @@
                     <button type="button" id="cancelEditBtn" class="border border-red-500 text-red-500 hover:bg-red-500 hover:text-white px-7 py-1 rounded-full shadow font-semibold transition">
                         Cancel
                     </button>
-                    <button type="submit" id="saveEditBtn" class="border border-[#FF9800] text-white hover:bg-[#FF9800]/80 hover:text-white/80 px-7 py-1 rounded-full shadow font-semibold flex items-center gap-2 transition">
+                    <button type="submit" id="saveEditBtn" class="border border-bh-primary text-white hover:bg-bh-primary/80 hover:text-white/80 px-7 py-1 rounded-full shadow font-semibold flex items-center gap-2 transition">
                         Save change
                     </button>
                 </div>
@@ -85,40 +85,40 @@
                 </div>
                 <div class="ml-6 mt-12 flex flex-col flex-grow">
                     <div class="mb-4">
-                        <input type="text" id="editUsername" name="username" class="text-5xl py-2 font-normal text-[#5C3211] border border-[#5C3211] rounded-lg focus:outline-none focus:border-[#FF9800] px-3 pt-3" placeholder="Username" value="<?= esc(old('username', session()->get('username'))) ?>" />                           
+                        <input type="text" id="editUsername" name="username" class="text-5xl py-2 font-normal text-bh-text border border-bh-border rounded-lg focus:outline-none focus:border-bh-primary px-3 pt-3" placeholder="Username" value="<?= esc(old('username', session()->get('username'))) ?>" />                           
                         <!-- <p id="usernameError" class="absolute top-full mt-1 text-sm text-[#FF0000] hidden">
                             Username must be 8-20 characters
                         </p> -->
                     </div>
                     <div class="flex items-start mt-2 gap-4">
                         <div class="flex flex-col"> 
-                            <input type="text" id="editFirstName" name="firstName" class="text-xl py-2 text-[#5C3211] font-normal border border-[#5C3211] rounded-lg focus:outline-none focus:border-[#FF980B] px-3 pt-3" placeholder="First Name" value="<?= esc(old('firstName', session()->get('nama_depan'))) ?>" />
+                            <input type="text" id="editFirstName" name="firstName" class="text-xl py-2 text-bh-text font-normal border border-bh-border rounded-lg focus:outline-none focus:border-[#FF980B] px-3 pt-3" placeholder="First Name" value="<?= esc(old('firstName', session()->get('nama_depan'))) ?>" />
                         </div>
                         <div class="flex flex-col"> 
-                            <input type="text" id="editLastName" name="lastName" class="text-xl py-2 text-[#5C3211] font-normal border border-[#5C3211] rounded-lg focus:outline-none focus:border-[#FF980B] px-3 pt-3" placeholder="Last Name" value="<?= esc(old('lastName', session()->get('nama_belakang'))) ?>" />
+                            <input type="text" id="editLastName" name="lastName" class="text-xl py-2 text-bh-text font-normal border border-bh-border rounded-lg focus:outline-none focus:border-[#FF980B] px-3 pt-3" placeholder="Last Name" value="<?= esc(old('lastName', session()->get('nama_belakang'))) ?>" />
                         </div>
-                        <span class="text-lg text-[#5C3211] font-light mt-3"><?= esc(session()->get('email') ?? '') ?></span>
+                        <span class="text-lg text-bh-text-muted font-light mt-3"><?= esc(session()->get('email') ?? '') ?></span>
                     </div>
                 </div>
             </form>
         </div>
     </div>
-    <div id="bawahProfil" class="bg-[#FFFFFF] rounded-xl p-4 flex items-center justify-between shadow-md overflow-hidden mt-8 border border-[#F0D3B3] hidden">
+    <div id="bawahProfil" class="bg-bh-surface rounded-xl p-4 flex items-center justify-between shadow-md overflow-hidden mt-8 border border-bh-border hidden">
         <div class="flex flex-col w-full">
-            <button id="openAccountSettingBtn" class="flex items-center gap-3 py-2 px-4 rounded transition text-[#5C3211] font-medium text-lg focus:outline-none">
+            <button id="openAccountSettingBtn" class="flex items-center gap-3 py-2 px-4 rounded transition text-bh-text font-medium text-lg focus:outline-none">
                 <i class="fas fa-gear text-xl"></i>
                 <span class="hover:underline pt-1">Account setting</span>
             </button>
-            <hr class="my-3 border-[#F0D3B3]">
-            <button id="logoutBtn" class="flex items-center gap-3 py-2 px-4 rounded transition text-[#5C3211] font-medium text-lg focus:outline-none">
+            <hr class="my-3 border-bh-border">
+            <button id="logoutBtn" class="flex items-center gap-3 py-2 px-4 rounded transition text-bh-text font-medium text-lg focus:outline-none">
                 <i class="fa-solid fa-right-from-bracket text-xl"></i>
                 <span class="hover:underline pt-1">Logout</span>
             </button>
         </div>
     </div>
-    <div id="accountSetting" class="bg-[#FFFFFF] text-[#5C3211] hidden rounded-xl p-8 shadow-md overflow-hidden mt-8 border border-[#F0D3B3]">
+    <div id="accountSetting" class="bg-bh-surface text-bh-text hidden rounded-xl p-8 shadow-md overflow-hidden mt-8 border border-bh-border">
         <div class="w-full relative">
-            <button id="closeAccountSettingBtn" class="absolute top-0 right-0 text-[#5C3211] hover:bg-gray-100 rounded-full transition w-8 h-8 flex items-center justify-center" title="Close">
+            <button id="closeAccountSettingBtn" class="absolute top-0 right-0 text-bh-text hover:bg-gray-100 rounded-full transition w-8 h-8 flex items-center justify-center" title="Close">
                 <i class="fa-solid fa-xmark text-xl"></i>
             </button>
 
@@ -126,7 +126,7 @@
                 <span class="text-3xl font-bold">Account settings</span>
             </div>
 
-            <hr class="border-t border-[#5C3211]/30 my-6">
+            <hr class="border-t border-bh-border/30 my-6">
 
             <form id="changePasswordForm" action="<?= site_url('password/change') ?>" method="post">
                 <div>
@@ -134,19 +134,19 @@
                         <span class="text-xl font-semibold">Change password</span>
                     </div>
                     <div class="flex flex-col max-w-sm gap-4"> 
-                        <input type="password" id="currentPassword" name="current_password" placeholder="Current password" class="border border-[#5C3211] rounded-lg px-4 py-2 focus:outline-none focus:border-[#FF9800]">
+                        <input type="password" id="currentPassword" name="current_password" placeholder="Current password" class="border border-bh-border rounded-lg px-4 py-2 focus:outline-none focus:border-bh-primary">
                         <div class="relative">
-                            <input type="password" id="newPass" name="new_password" placeholder="New password" class="border border-[#5C3211] w-full rounded-lg px-4 py-2 focus:outline-none focus:border-[#FF9800]">
+                            <input type="password" id="newPass" name="new_password" placeholder="New password" class="border border-bh-border w-full rounded-lg px-4 py-2 focus:outline-none focus:border-bh-primary">
                             <p id="passwordError" class="absolute mt-1 text-sm text-red-500 hidden">Password need to contain at least 8 characters.</p>
                         </div>
                     </div>
-                    <button type="submit" id="savePasswordBtn" class="border border-[#FF9800] text-white hover:bg-[#FF9800]/80 hover:text-white/80 px-7 py-1 rounded-full shadow font-semibold flex items-center gap-2 transition mt-8">
+                    <button type="submit" id="savePasswordBtn" class="border border-bh-primary text-white hover:bg-bh-primary/80 hover:text-white/80 px-7 py-1 rounded-full shadow font-semibold flex items-center gap-2 transition mt-8">
                         Save new password
                     </button>
                 </div>
             </form>
 
-            <hr class="my-6 border-[#F0D3B3]">
+            <hr class="my-6 border-bh-border">
 
             <?php if (isset($user_role) && $user_role !== 'admin') :  ?>
             <form id="deleteAccountForm" action="<?= site_url('account/delete') ?>" method="post">

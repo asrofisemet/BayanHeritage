@@ -1,9 +1,9 @@
 <?php // app/Views/partials/modal_menu.php ?>
 
 <div id="menuModal" class="fixed inset-0 bg-black bg-opacity-60 flex justify-center items-center z-50 p-4 hidden">
-    <div class="bg-white p-4 rounded-2xl shadow-2xl border border-[#5C3211]/30 w-6/12 text-[#5C3211]">
-        <div class="border border-[#5C3211] rounded-xl p-8 relative">
-            <button id="closeMenuModal" class="absolute top-3 right-3 w-5 h-5 rounded-full flex items-center justify-center text-[#5C3211] hover:bg-gray-100 transition focus:outline-none">
+    <div class="bg-white p-4 rounded-2xl shadow-2xl border border-bh-border/30 w-6/12 text-bh-text">
+        <div class="border border-bh-border rounded-xl p-8 relative">
+            <button id="closeMenuModal" class="absolute top-3 right-3 w-5 h-5 rounded-full flex items-center justify-center text-bh-text hover:bg-gray-100 transition focus:outline-none">
                 <i class="fas fa-xmark text-lg"></i>
             </button>
 
@@ -42,14 +42,14 @@
                                 <?php endif; ?>
                             </div>
                         </div>
-                        <hr class="border-[#5C3211] mb-3">
+                        <hr class="border-bh-border mb-3">
                     <?php endforeach; ?>
                     <p class="pt-3 text-center">
                         That's all.
                     </p>
 
                 <?php else : ?>
-                    <p class="text-center text-[#5C3211] py-8">There's no available menu yet.</p>
+                    <p class="text-center text-bh-text py-8">There's no available menu yet.</p>
                 <?php endif; ?>
 
                 <div id="addMenuFormContainer" class="hidden pt-4">
@@ -77,13 +77,13 @@
                         </div>
                         <div class="flex justify-end gap-3 pt-4">
                             <button type="button" id="cancelAddMenuBtn" class="bg-gray-200 text-gray-700 px-4 py-2 rounded-md hover:bg-gray-300">Cancel</button>
-                            <button type="submit" class="bg-[#FF9800] text-white font-bold hover:bg-[#FF9800]/80 hover:text-white/80 px-7 py-1 rounded-full">Save Menu</button>
+                            <button type="submit" class="bg-bh-primary text-white font-bold hover:bg-bh-primary/80 hover:text-white/80 px-7 py-1 rounded-full">Save Menu</button>
                         </div>
                     </form>
                 </div>
             </div>      
             <?php if (isset($isOwner) && $isOwner) : ?>
-                <button id="addMenuItemBtn" title="Tambah Menu Baru" class="absolute px-4 m-2 bottom-5 right-4 w-14 h-14 text-[#FF9800] flex items-center justify-center hover:bg-opacity-80 transition">
+                <button id="addMenuItemBtn" title="Tambah Menu Baru" class="absolute px-4 m-2 bottom-5 right-4 w-14 h-14 text-bh-accent-text flex items-center justify-center hover:bg-opacity-80 transition">
                     <i class="fas fa-plus text-xl"></i>
                 </button>
             <?php endif; ?>

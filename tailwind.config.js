@@ -9,10 +9,21 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        golden: "#FFC107",
-        grayish: "#8D6E63",
-        "page-bg": "#fffaf2",
-        "border-card": "#ccc",
+        golden: "#5B8C51",
+        grayish: "#5C4A3A",
+        "page-bg": "#F2EDE3",
+        "border-card": "#D8E0D4",
+        "bh-primary": "#4A6741",
+        "bh-primary-dark": "#3A5535",
+        "bh-secondary": "#7BA373",
+        "bh-accent": "#5B8C51",
+        "bh-accent-text": "#3D6B35",
+        "bh-brown": "#5C4A3A",
+        "bh-bg": "#F2EDE3",
+        "bh-surface": "#FFFFFF",
+        "bh-text": "#2D3B2D",
+        "bh-text-muted": "#6B7E6B",
+        "bh-border": "#D8E0D4",
       },
       fontFamily: {
         josefin: ['"Josefin Sans"', "sans-serif"],

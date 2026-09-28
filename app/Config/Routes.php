@@ -19,6 +19,7 @@ $routes->post('password/process-reset', 'ForgotPassword::processResetPassword');
 // --- Routing Dashboard Utama ---
 $routes->get('/', 'Landing::landingPage'); 
 $routes->get('/landing', 'Landing::landingPage');
+$routes->get('/heritage', 'Landing::heritagePage');
 $routes->get('/home', 'Home::index');
 
 // --- Routing untuk Submit Form (Non-AJAX, Full Page Reload) ---

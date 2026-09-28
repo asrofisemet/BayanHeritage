@@ -1,6 +1,6 @@
 <div id="manageVerification" class="header mb-5 hidden">
     <h1 class="text-white text-center text-3xl md:text-5xl font-bold mb-5 [text-shadow:1px_1px_3px_rgba(0,0,0,0.5)]">Manage Verification</h1>
-    <div class="bg-white text-[#5C3211] rounded-xl p-6 shadow-md max-w-3xl mx-auto border border-[#F0D3B3] max-h-[70vh] overflow-y-auto pr-2.5">
+    <div class="bg-white text-bh-text rounded-xl p-6 shadow-md max-w-3xl mx-auto border border-bh-border max-h-[70vh] overflow-y-auto pr-2.5">
 
         <?php if (!empty($verificationItems)) : ?>
 
@@ -109,7 +109,7 @@
 </div>
 
 <div id="addPlaceModal" class="modal-overlay fixed top-0 left-0 w-full h-full bg-black/60 flex justify-center items-center z-[1000] hidden">
-    <div class="bg-gradient-to-b from-[#FFC107] to-[#F8F9FA] rounded-xl p-6 md:p-8 w-11/12 max-w-lg relative shadow-2xl">
+    <div class="bg-gradient-to-b from-bh-primary-dark to-bh-primary rounded-xl p-6 md:p-8 w-11/12 max-w-lg relative shadow-2xl">
         <div class="modal-close-btn" data-close-modal="addPlaceModal">
             <i class="fa-solid fa-xmark text-lg text-[#1F2937]"></i>
         </div>
@@ -128,7 +128,7 @@
     </div>
 </div>
 <div id="claimCulinaryModal" class="modal-overlay fixed top-0 left-0 w-full h-full bg-black/60 flex justify-center items-center z-[1000] hidden">
-    <div class="bg-gradient-to-b from-[#FFC107] to-[#F8F9FA] rounded-xl p-6 md:p-8 w-11/12 max-w-lg relative shadow-2xl">
+    <div class="bg-gradient-to-b from-bh-primary-dark to-bh-primary rounded-xl p-6 md:p-8 w-11/12 max-w-lg relative shadow-2xl">
         <div class="modal-close-btn" data-close-modal="claimCulinaryModal">
             <i class="fa-solid fa-xmark text-lg text-[#1F2937]"></i>
         </div>

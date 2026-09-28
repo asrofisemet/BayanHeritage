@@ -2,7 +2,7 @@
 
 <div id="notification" class="header mb-5 hidden">
     <h1 class="text-white text-center text-3xl md:text-5xl font-bold mb-5 [text-shadow:1px_1px_3px_rgba(0,0,0,0.5)]">Notifications</h1>
-    <div class="bg-white text-[#5C3211] rounded-xl p-6 shadow-md max-w-3xl mx-auto border border-[#F0D3B3]">
+    <div class="bg-white text-bh-text rounded-xl p-6 shadow-md max-w-3xl mx-auto border border-bh-border">
         <?php if (!empty($notifikasi)): ?>
             <?php foreach ($notifikasi as $notif): ?>
                 
