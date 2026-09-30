@@ -34,6 +34,287 @@
         </div>
     </div>
 
+    <!-- Google Fonts untuk Tab (jika belum ada) -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Style untuk Tab Navigation -->
+    <style>
+        :root {
+            --color-emerald: #047857;
+            --color-emerald-light: #10b981;
+            --color-inactive-bg: #e5e7eb;
+            --color-inactive-text: #6b7280;
+            --color-text: #1f2937;
+        }
+
+        .bh-tab-section {
+            background-color: #f3f4f6;
+            padding: 80px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .tab-container {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(4, 120, 87, 0.1);
+            overflow: hidden;
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .tab-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            background-color: #f9fafb;
+            border-bottom: 2px solid var(--color-inactive-bg);
+        }
+
+        .tab-btn {
+            flex: 1;
+            background: transparent;
+            border: none;
+            padding: 18px 24px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            font-size: 1rem;
+            color: var(--color-inactive-text);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            outline: none;
+        }
+
+        .tab-btn:hover {
+            color: var(--color-emerald-light);
+            background-color: rgba(16, 185, 129, 0.05);
+        }
+
+        .tab-btn.active {
+            color: #ffffff;
+            background-color: var(--color-emerald);
+            font-weight: 600;
+        }
+
+        .tab-content-wrapper {
+            padding: 40px;
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .tab-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: var(--color-emerald);
+            margin-top: 0;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .tab-text {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--color-text);
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .tab-list {
+            margin-top: 16px;
+            padding-left: 20px;
+            line-height: 1.8;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .tab-list li {
+            margin-bottom: 12px;
+        }
+
+        .tab-list strong {
+            color: var(--color-emerald);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .tab-btn { flex: 1 1 50%; border-bottom: 1px solid var(--color-inactive-bg); }
+        }
+
+        @media (max-width: 480px) {
+            .tab-btn { flex: 1 1 100%; text-align: left; }
+            .tab-btn.active { border-left: 4px solid var(--color-emerald-light); }
+            .tab-content-wrapper { padding: 24px; }
+            .tab-title { font-size: 1.8rem; }
+        }
+    </style>
+
+<!-- ═══════════════════════════════════════════
+         TENTANG SECTION (TAB NAVIGATION)
+    ═══════════════════════════════════════════ -->
+    <section class="bh-tab-section" id="tentang">
+        <div class="tab-container">
+            <!-- Tab Navigation Buttons -->
+            <div class="tab-buttons">
+                <button class="tab-btn active" data-target="arsitektur">Arsitektur</button>
+                <button class="tab-btn" data-target="pakaian-adat">Pakaian Adat</button>
+                <button class="tab-btn" data-target="maulid-adat">Maulid Adat</button>
+                <button class="tab-btn" data-target="larangan">Larangan</button>
+            </div>
+
+            <!-- Tab Contents -->
+            <div class="tab-content-wrapper text-left">
+                <!-- Tab 1: Arsitektur -->
+                <div class="tab-content active" id="arsitektur">
+                    <h2 class="tab-title">Filosofi Arsitektur Wetu Telu</h2>
+                    <div class="mb-6 overflow-hidden rounded-xl shadow-md h-64 md:h-80 w-full transition duration-300 hover:shadow-lg">
+                        <img src="<?= base_url('Assets/arsitektur.jpg') ?>" alt="Arsitektur Wetu Telu" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <p class="tab-text">
+                        Arsitektur tradisional di Bayan memiliki makna filosofis yang mendalam, mencerminkan konsep <strong>Wetu Telu</strong> dan harmoni alam. Setiap elemen bangunan tidak hanya berfungsi secara fisik, tetapi juga spiritual:
+                    </p>
+                    <ul class="tab-list">
+                        <li><strong>Pondasi Batu Kali:</strong> Melambangkan keteguhan dan pijakan yang kuat pada bumi, serta pengingat akan pentingnya menjaga keseimbangan dengan alam bawah.</li>
+                        <li><strong>Dinding Bambu:</strong> Menyimbolkan fleksibilitas, kesederhanaan, dan keterbukaan masyarakat adat dalam menerima perubahan tanpa kehilangan jati diri.</li>
+                        <li><strong>Tiang Kayu:</strong> Sebagai simbol manusia yang berdiri tegak menghubungkan bumi dan langit (Sang Pencipta), serta lambang kepemimpinan dan kekokohan adat.</li>
+                    </ul>
+                </div>
+
+                <!-- Tab 2: Pakaian Adat -->
+                <div class="tab-content" id="pakaian-adat">
+                    <h2 class="tab-title">Tata Tertib Pakaian Adat Sasak</h2>
+                    <div class="flex flex-col sm:flex-row gap-4 mb-6">
+                        <div class="overflow-hidden rounded-xl shadow-md h-64 md:h-80 flex-1 transition duration-300 hover:shadow-lg">
+                            <img src="<?= base_url('Assets/pakaian adat cowok.jpg') ?>" alt="Pakaian Adat Pria" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" style="object-position: top;">
+                        </div>
+                        <div class="overflow-hidden rounded-xl shadow-md h-64 md:h-80 flex-1 transition duration-300 hover:shadow-lg">
+                            <img src="<?= base_url('Assets/pakaian adat cewek.JPG') ?>" alt="Pakaian Adat Wanita" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" style="object-position: top;">
+                        </div>
+                    </div>
+                    <p class="tab-text">
+                        Memasuki area suci atau mengikuti prosesi adat di Bayan mewajibkan penggunaan pakaian adat Sasak yang memiliki makna kesopanan dan penghormatan yang tinggi.
+                    </p>
+                    <ul class="tab-list">
+                        <li><strong>Dodot:</strong> Kain kemben atau sabuk kain yang diikatkan di pinggang. Penggunaan dodot melambangkan pengendalian diri dan pengikat hawa nafsu duniawi.</li>
+                        <li><strong>Jong:</strong> Ikat kepala khas yang wajib dikenakan. Jong melambangkan kehormatan, pikiran yang bersih, dan ketaatan kepada Sang Pencipta serta leluhur.</li>
+                    </ul>
+                </div>
+
+                <!-- Tab 3: Maulid Adat -->
+                <div class="tab-content" id="maulid-adat">
+                    <h2 class="tab-title">Sistem Penanggalan Maulid Adat</h2>
+                    <div class="mb-6 overflow-hidden rounded-xl shadow-md h-64 md:h-80 w-full transition duration-300 hover:shadow-lg">
+                        <img src="<?= base_url('Assets/mulud bayan.jpeg') ?>" alt="Maulid Adat Bayan" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <p class="tab-text">
+                        Perayaan Maulid di Bayan memiliki keunikan tersendiri karena tidak merujuk langsung pada kalender Hijriah umum, melainkan memiliki <strong>sistem penanggalan adat (Kalender Sasak/Rowot)</strong> yang sangat spesifik.
+                    </p>
+                    <ul class="tab-list mt-3">
+                        <li><strong>Penentuan Jadwal Pasti:</strong> Jatuhnya perayaan Maulid Adat Bayan ditentukan oleh para tokoh adat (Kyai Adat) melalui kombinasi pengamatan munculnya bintang Pari (Bintang Rowot), perhitungan bulan (purnama/tilem), dan hitungan matematis <em>Tri Wara</em> serta <em>Panca Wara</em>.</li>
+                        <li><strong>Waktu Pelaksanaan:</strong> Puncak peringatannya biasanya dirayakan dua hari setelah Maulid secara kalender nasional, sehingga kerap berselisih hari dengan kalender umum.</li>
+                        <li><strong>Prosesi Utama:</strong> Acara dipusatkan di Masjid Kuno Bayan Beleq, meliputi ritual mencuci pusaka, <em>Menumbuk Padi (Ngahaq)</em>, dan doa bersama.</li>
+                    </ul>
+                </div>
+
+                <!-- Tab 4: Larangan -->
+                <div class="tab-content" id="larangan">
+                    <h2 class="tab-title">Larangan bagi Wisatawan</h2>
+                    <p class="tab-text">
+                        Untuk menjaga kelestarian dan kesucian nilai adat Bayan, terdapat beberapa pantangan ketat yang wajib dipatuhi oleh setiap pengunjung:
+                    </p>
+                    <ul class="tab-list">
+                        <li><strong>Larangan Masuk bagi Wanita Haid:</strong> Wanita yang sedang dalam masa menstruasi dilarang keras memasuki area suci seperti Masjid Kuno Bayan untuk menjaga kebersihannya.</li>
+                        <li><strong>Kewajiban Menjaga Tata Krama:</strong> Pengunjung wajib berbicara dengan sopan, dilarang mengucapkan kata-kata kasar, serta harus menunjukkan rasa hormat kepada adat setempat.</li>
+                        <li><strong>Larangan Merusak Area Suci:</strong> Dilarang keras mengambil, memindahkan, atau merusak benda apapun di kawasan situs adat dan hutan adat.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         LOKASI & AKSES SECTION
+    ═══════════════════════════════════════════ -->
+    <section class="bh-lokasi-akses-section py-20" style="background-color: #f0fdf4;" id="lokasi">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-12" style="font-family: 'Playfair Display', serif; color: #064e3b;">
+                Lokasi & Akses
+            </h2>
+
+            <!-- 2-Column Grid (Responsive) -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                <!-- Kolom Kiri: Maps (Iframe) -->
+                <div class="flex flex-col gap-6">
+                    <!-- Peta 2D -->
+                    <div class="rounded-2xl overflow-hidden shadow-lg border-4 border-white" style="height: 300px; width: 100%;">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15793.475535551397!2d116.42160673094733!3d-8.266032086592425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dcc2b123332ef8f%3A0x242a3ce9224598e4!2sMasjid%20Kuno%20Bayan%20Beleq!5e0!3m2!1sen!2sid!4v1790800540554!5m2!1sen!2sid" 
+                            width="100%" height="100%" style="border:0;" 
+                            allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                    </div>
+                    <!-- Peta 360 / Street View -->
+                    <div class="rounded-2xl overflow-hidden shadow-lg border-4 border-white" style="height: 300px; width: 100%;">
+                        <iframe src="https://www.google.com/maps/embed?pb=!4v1790800672122!6m8!1m7!1sCAoSF0NJSE0wb2dLRUlDQWdJRG44Y2ZQNGdF!2m2!1d-8.266685679383496!2d116.4271547363054!3f317.9912!4f0!5f0.7820865974627469" 
+                            width="100%" height="100%" style="border:0;" 
+                            allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                    </div>
+                </div>
+
+                <!-- Kolom Kanan: Teks Informasi Lokasi -->
+                <div class="flex flex-col justify-center bg-white p-8 md:p-10 rounded-3xl shadow-xl" style="font-family: 'Poppins', sans-serif; color: #1f2937; border-top: 5px solid #047857;">
+                    
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-bold mb-3 flex items-center gap-3" style="color: #064e3b; font-family: 'Playfair Display', serif;">
+                            <span class="flex items-center justify-center w-10 h-10 rounded-full bg-green-100 text-green-700">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </span>
+                            Alamat Lengkap
+                        </h3>
+                        <p class="text-lg leading-relaxed text-gray-700" style="margin-left: 3.25rem;">
+                            Desa Bayan, Kecamatan Bayan, Kabupaten Lombok Utara, Nusa Tenggara Barat.
+                        </p>
+                    </div>
+
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-bold mb-3 flex items-center gap-3" style="color: #064e3b; font-family: 'Playfair Display', serif;">
+                            <span class="flex items-center justify-center w-10 h-10 rounded-full bg-green-100 text-green-700">
+                                <i class="fa-solid fa-car-side"></i>
+                            </span>
+                            Jarak Tempuh
+                        </h3>
+                        <p class="text-lg leading-relaxed text-gray-700" style="margin-left: 3.25rem;">
+                            Berjarak sekitar <strong>80 kilometer</strong> dari pusat Kota Mataram. Perjalanan darat menggunakan mobil atau motor biasanya memakan waktu sekitar <strong>2 hingga 2,5 jam</strong>.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-2xl font-bold mb-3 flex items-center gap-3" style="color: #064e3b; font-family: 'Playfair Display', serif;">
+                            <span class="flex items-center justify-center w-10 h-10 rounded-full bg-green-100 text-green-700">
+                                <i class="fa-solid fa-route"></i>
+                            </span>
+                            Informasi Akses Jalan
+                        </h3>
+                        <p class="text-lg leading-relaxed text-gray-700" style="margin-left: 3.25rem;">
+                            Akses jalan menuju lokasi sangat baik dan sudah diaspal mulus. Dapat dilalui oleh kendaraan pribadi maupun bus pariwisata. Selama perjalanan, Anda bisa memilih rute pesisir Pantai Senggigi yang indah, atau rute pegunungan Hutan Pusuk yang sejuk.
+                        </p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
     <main class="main-container flex-1 overflow-y-auto bg-white py-16">
         <?php if (isset($show_detail_tempat) && $show_detail_tempat === true) : ?>
             <div class="min-h-screen p-6 md:p-8 w-full max-w-7xl mx-auto">
@@ -186,4 +467,27 @@
         </div>
         <?php endif; ?>
     </main>
+
+<!-- Tab Navigation Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            if (tabButtons.length > 0) {
+                tabButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        tabButtons.forEach(btn => btn.classList.remove('active'));
+                        tabContents.forEach(content => content.classList.remove('active'));
+                        button.classList.add('active');
+                        const targetId = button.getAttribute('data-target');
+                        const targetContent = document.getElementById(targetId);
+                        if (targetContent) {
+                            targetContent.classList.add('active');
+                        }
+                    });
+                });
+            }
+        });
+    </script>
 <?= $this->endSection(); ?>
