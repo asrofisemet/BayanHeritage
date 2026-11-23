@@ -61,14 +61,15 @@ class Home extends BaseController
         $idTempat = $this->request->getGet('id');
 
         $data = [
-            'title'       => ucfirst($userRole) . ' Homepage | LombokRec',
+            'title'       => ucfirst($userRole) . ' Homepage | BayanHeritage',
             'js_file'     => 'home.js',
             'user_role'   => $userRole,
             'isLoggedIn'  => $isLoggedIn,
             'path'        => site_url('home'),
             'categories' => [
                 'tourist_destination' => ['label' => 'Tourist destination', 'icon'  => 'fa-solid fa-location-dot'],
-                'culinary' => ['label' => 'Culinary', 'icon'  => 'fa-solid fa-utensils']
+                'culinary'            => ['label' => 'Culinary & Tradisi',   'icon'  => 'fa-solid fa-utensils'],
+                'sacred_tombs'        => ['label' => 'Sacred Tombs',         'icon'  => 'fa-solid fa-landmark']
             ],
             'show_detail_tempat' => false,
             'tempat'             => null,

@@ -1,5 +1,5 @@
 /**
- * File JavaScript Utama untuk Aplikasi LombokREC.
+ * File JavaScript Utama untuk Aplikasi BayanHeritage.
  * * Catatan:
  * - Kode ini adalah file eksternal dan tidak bisa menjalankan PHP.
  * - Data dari PHP (seperti base_url) diambil dari atribut `data-*` pada tag <body>.

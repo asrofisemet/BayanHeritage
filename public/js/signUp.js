@@ -2,67 +2,85 @@ document.addEventListener('DOMContentLoaded', () => {
     const emailInput = document.getElementById('email');
     const emailError = document.getElementById('emailError');
     const passwordInput = document.getElementById('password');
-    const togglePasswordIcon = document.getElementById('togglePasswordIcon');
     const passwordError = document.getElementById('passwordError');
+    const usernameInput = document.getElementById('username');
     const usernameError = document.getElementById('usernameError');
-    const signUpBtn = document.getElementById('signUpBtn');
     const namaDepanInput = document.getElementById('nama_depan');
     const namaBelakangInput = document.getElementById('nama_belakang');
-    const usernameInput = document.getElementById('username');
     const allField = document.getElementById('allField');
+    const signUpBtn = document.getElementById('signUpBtn');
 
-    if (togglePasswordIcon) {
-        togglePasswordIcon.addEventListener('click', function () {
-            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-            passwordInput.setAttribute('type', type);
-            this.classList.toggle('fa-eye-slash');
-            this.classList.toggle('fa-eye');
+    // Password visibility toggle
+    const toggleBtn = document.getElementById('togglePasswordBtn');
+    const iconEyeSlash = document.getElementById('iconEyeSlash');
+    const iconEyeOpen = document.getElementById('iconEyeOpen');
+
+    if (toggleBtn && passwordInput) {
+        toggleBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+            const isPassword = passwordInput.getAttribute('type') === 'password';
+            passwordInput.setAttribute('type', isPassword ? 'text' : 'password');
+            if (iconEyeSlash && iconEyeOpen) {
+                iconEyeSlash.style.display = isPassword ? 'none' : 'block';
+                iconEyeOpen.style.display = isPassword ? 'block' : 'none';
+            }
         });
     }
 
     function checkFormAndDisplayErrors() {
-        const firstName = namaDepanInput.value.trim();
-        const lastName = namaBelakangInput.value.trim();
-        const email = emailInput.value.trim();
-        const username = usernameInput.value.trim();
-        const password = passwordInput.value;
+        const firstName = namaDepanInput ? namaDepanInput.value.trim() : "";
+        const lastName = namaBelakangInput ? namaBelakangInput.value.trim() : "";
+        const email = emailInput ? emailInput.value.trim() : "";
+        const username = usernameInput ? usernameInput.value.trim() : "";
+        const password = passwordInput ? passwordInput.value : "";
 
-        const isAllFieldsFilled = firstName !== "" && email !== "" && username !== "" && password !== "" && lastName !== "";
+        const isAllFieldsFilled = firstName !== "" && lastName !== "" && email !== "" && username !== "" && password !== "";
 
-        if (isAllFieldsFilled) {
-            allField.classList.add('hidden');
-        } else {
-            allField.classList.remove('hidden');
+        if (allField) {
+            if (isAllFieldsFilled) {
+                allField.classList.add('hidden');
+            } else {
+                allField.classList.remove('hidden');
+            }
         }
 
-        if (username !== "") {
-            if (username.length < 8 || username.length > 20) {
-                usernameError.classList.remove('hidden');
+        // Username validation (8-20 characters)
+        if (usernameError && usernameInput) {
+            if (username !== "") {
+                if (username.length < 8 || username.length > 20) {
+                    usernameError.classList.add('show');
+                } else {
+                    usernameError.classList.remove('show');
+                }
             } else {
-                usernameError.classList.add('hidden');
+                usernameError.classList.remove('show');
             }
-        } else {
-            usernameError.classList.add('hidden');
         }
 
-        if (email !== "") {
-            if (!email.includes('@')) {
-                emailError.classList.remove('hidden');
+        // Email validation (must contain '@')
+        if (emailError && emailInput) {
+            if (email !== "") {
+                if (!email.includes('@')) {
+                    emailError.classList.add('show');
+                } else {
+                    emailError.classList.remove('show');
+                }
             } else {
-                emailError.classList.add('hidden');
+                emailError.classList.remove('show');
             }
-        } else {
-            emailError.classList.add('hidden');
         }
 
-        if (password !== "") {
-            if (password.length < 8 || password.length > 20) {
-                passwordError.classList.remove('hidden');
+        // Password validation (8-20 characters)
+        if (passwordError && passwordInput) {
+            if (password !== "") {
+                if (password.length < 8 || password.length > 20) {
+                    passwordError.classList.add('show');
+                } else {
+                    passwordError.classList.remove('show');
+                }
             } else {
-                passwordError.classList.add('hidden');
+                passwordError.classList.remove('show');
             }
-        } else {
-            passwordError.classList.add('hidden');
         }
 
         const isFirstNameValid = firstName !== "";
@@ -73,27 +91,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const isFormCompletelyValid = isFirstNameValid && isLastNameValid && isUsernameValid && isEmailValid && isPasswordValid;
 
-        if (isFormCompletelyValid) {
-            signUpBtn.classList.remove('opacity-50', 'cursor-not-allowed');
-            signUpBtn.classList.add('cursor-pointer');
-            signUpBtn.disabled = false;
-        } else {
-            signUpBtn.classList.add('opacity-50', 'cursor-not-allowed');
-            signUpBtn.classList.remove('cursor-pointer');
-            signUpBtn.disabled = true;
+        if (signUpBtn) {
+            if (isFormCompletelyValid) {
+                signUpBtn.classList.add('is-valid');
+                signUpBtn.disabled = false;
+            } else {
+                signUpBtn.classList.remove('is-valid');
+                signUpBtn.disabled = true;
+            }
         }
     }
 
-    if (namaDepanInput) {
-        namaDepanInput.addEventListener('input', checkFormAndDisplayErrors);
-    }
-    if (usernameInput) {
-        usernameInput.addEventListener('input', checkFormAndDisplayErrors);
-    }
-    if (emailInput) {
-        emailInput.addEventListener('input', checkFormAndDisplayErrors);
-    }
-    if (passwordInput) {
-        passwordInput.addEventListener('input', checkFormAndDisplayErrors);
-    }
+    if (namaDepanInput) namaDepanInput.addEventListener('input', checkFormAndDisplayErrors);
+    if (namaBelakangInput) namaBelakangInput.addEventListener('input', checkFormAndDisplayErrors);
+    if (emailInput) emailInput.addEventListener('input', checkFormAndDisplayErrors);
+    if (usernameInput) usernameInput.addEventListener('input', checkFormAndDisplayErrors);
+    if (passwordInput) passwordInput.addEventListener('input', checkFormAndDisplayErrors);
+
+    // Initial check in case fields are prefilled
+    checkFormAndDisplayErrors();
 });

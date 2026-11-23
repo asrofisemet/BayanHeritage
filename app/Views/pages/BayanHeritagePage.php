@@ -5,128 +5,10 @@
 <!-- ── Bayan Heritage Design System Stylesheet ── -->
 <link href="<?= base_url('css/bayan-heritage.css') ?>" rel="stylesheet">
 
-<!-- Style untuk Tab Navigation -->
-<style>
-    :root {
-        --color-emerald: #047857;
-        --color-emerald-light: #10b981;
-        --color-inactive-bg: #e5e7eb;
-        --color-inactive-text: #6b7280;
-        --color-text: #1f2937;
-    }
-
-    .bh-tab-section {
-        background-color: #f3f4f6;
-        padding: 80px 20px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .tab-container {
-        background-color: #ffffff;
-        border-radius: 12px;
-        box-shadow: 0 10px 25px rgba(4, 120, 87, 0.1);
-        overflow: hidden;
-        width: 100%;
-        max-width: 1000px;
-        margin: 0 auto;
-    }
-
-    .tab-buttons {
-        display: flex;
-        flex-wrap: wrap;
-        background-color: #f9fafb;
-        border-bottom: 2px solid var(--color-inactive-bg);
-    }
-
-    .tab-btn {
-        flex: 1;
-        background: transparent;
-        border: none;
-        padding: 18px 24px;
-        font-family: 'Poppins', sans-serif;
-        font-weight: 500;
-        font-size: 1rem;
-        color: var(--color-inactive-text);
-        cursor: pointer;
-        transition: all 0.3s ease;
-        position: relative;
-        outline: none;
-    }
-
-    .tab-btn:hover {
-        color: var(--color-emerald-light);
-        background-color: rgba(16, 185, 129, 0.05);
-    }
-
-    .tab-btn.active {
-        color: #ffffff;
-        background-color: var(--color-emerald);
-        font-weight: 600;
-    }
-
-    .tab-content-wrapper {
-        padding: 40px;
-    }
-
-    .tab-content {
-        display: none;
-        animation: fadeIn 0.5s ease;
-    }
-
-    .tab-content.active {
-        display: block;
-    }
-
-    .tab-title {
-        font-family: 'Playfair Display', serif;
-        font-size: 2.2rem;
-        color: var(--color-emerald);
-        margin-top: 0;
-        margin-bottom: 20px;
-        line-height: 1.3;
-    }
-
-    .tab-text {
-        font-size: 1rem;
-        line-height: 1.8;
-        color: var(--color-text);
-        margin: 0;
-        font-family: 'Poppins', sans-serif;
-    }
-
-    .tab-list {
-        margin-top: 16px;
-        padding-left: 20px;
-        line-height: 1.8;
-        font-family: 'Poppins', sans-serif;
-    }
-
-    .tab-list li {
-        margin-bottom: 12px;
-    }
-
-    .tab-list strong {
-        color: var(--color-emerald);
-    }
-
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(10px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-
-    @media (max-width: 768px) {
-        .tab-btn { flex: 1 1 50%; border-bottom: 1px solid var(--color-inactive-bg); }
-    }
-
-    @media (max-width: 480px) {
-        .tab-btn { flex: 1 1 100%; text-align: left; }
-        .tab-btn.active { border-left: 4px solid var(--color-emerald-light); }
-        .tab-content-wrapper { padding: 24px; }
-        .tab-title { font-size: 1.8rem; }
-    }
-</style>
+<!-- ═══════════════════════════════════════════════════════════
+     Premium Tab Navigation — Bayan Heritage
+     Sage/Olive green palette · Playfair Display + Poppins
+═══════════════════════════════════════════════════════════ -->
 
 <body class="bh-page"
       data-base-url="<?= base_url() ?>"
@@ -139,7 +21,10 @@
         <a href="<?= base_url() ?>" class="bh-nav__brand">
             Bayan <span>Heritage</span>
         </a>
-        <ul class="bh-nav__links">
+        <button class="bh-nav__toggle" id="bh-navToggle" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="bh-nav__links" id="bh-navLinks">
             <li><a href="#sejarah">Sejarah</a></li>
             <li><a href="#tentang">Tentang</a></li>
             <li><a href="<?= base_url('login') ?>" class="bh-nav__cta">Masuk</a></li>
@@ -151,16 +36,10 @@
          HERO SECTION
     ═══════════════════════════════════════════ -->
     <section class="bh-hero" id="hero">
-        <!-- Background Image -->
         <div class="bh-hero__bg" style="background-image: url('<?= base_url('Assets/bayan1.jpeg') ?>');"></div>
-        
-        <!-- Gradient Overlay -->
         <div class="bh-hero__overlay"></div>
-        
-        <!-- Subtle Pattern -->
         <div class="bh-hero__pattern"></div>
 
-        <!-- Content -->
         <div class="bh-hero__content">
             <div class="bh-hero__ornament">
                 Warisan Budaya Lombok
@@ -182,7 +61,6 @@
             </a>
         </div>
 
-        <!-- Scroll Indicator -->
         <div class="bh-hero__scroll">
             <span>Gulir ke bawah</span>
             <div class="bh-hero__scroll-line"></div>
@@ -196,7 +74,6 @@
     <section class="bh-article" id="sejarah">
         <div class="bh-article__inner">
 
-            <!-- Kolom Kiri — Heading + Pull Quote -->
             <div class="bh-article__heading-group bh-reveal">
                 <div class="bh-article__label">
                     Sejarah &amp; Budaya
@@ -217,7 +94,6 @@
                 </div>
             </div>
 
-            <!-- Kolom Kanan — Body Text -->
             <div class="bh-article__body">
                 <p class="bh-reveal delay-1">
                     Masjid Kuno Bayan Beleq berdiri tegak di jantung Desa Bayan, 
@@ -241,7 +117,6 @@
                     yang hingga kini menjadi penjaga setia situs sakral ini.
                 </p>
 
-                <!-- Info Card -->
                 <div class="bh-info-card bh-reveal delay-3">
                     <span class="bh-info-card__icon">📍</span>
                     <div class="bh-info-card__text">
@@ -257,71 +132,336 @@
     </section>
 
 
-    <!-- ═══════════════════════════════════════════
-         TENTANG SECTION (TAB NAVIGATION)
-    ═══════════════════════════════════════════ -->
-    <section class="bh-tab-section" id="tentang">
-        <div class="tab-container">
-            <!-- Tab Navigation Buttons -->
-            <div class="tab-buttons">
-                <button class="tab-btn active" data-target="arsitektur">Arsitektur</button>
-                <button class="tab-btn" data-target="pakaian-adat">Pakaian Adat</button>
-                <button class="tab-btn" data-target="maulid-adat">Maulid Adat</button>
-                <button class="tab-btn" data-target="larangan">Larangan</button>
+    <!-- ═══════════════════════════════════════════════════════
+         TENTANG SECTION — Premium Tab Navigation
+    ═══════════════════════════════════════════════════════ -->
+    <section class="bh-tabs" id="tentang">
+        <div class="bh-tabs__inner">
+
+            <!-- Section Header -->
+            <div class="bh-tabs__header bh-reveal">
+                <div class="bh-tabs__label">Panduan Wisata Budaya</div>
+                <h2 class="bh-tabs__heading">
+                    Mengenal Tradisi<br><em>Desa Adat Bayan</em>
+                </h2> 
+                <p class="bh-tabs__subheading">
+                    Empat hal penting yang wajib dipahami setiap wisatawan sebelum 
+                    mengunjungi kawasan sakral Masjid Kuno Bayan Beleq.
+                </p>
+                <!-- Decorative Ornament -->
+                <svg class="bh-tabs__ornament" width="120" height="16" viewBox="0 0 120 16" fill="none" aria-hidden="true">
+                    <path d="M0 8 H45 M75 8 H120" stroke="#7BA373" stroke-width="1.5"/>
+                    <path d="M52 0 L60 8 L68 0" stroke="#5B8C51" stroke-width="1.5" fill="none"/>
+                    <path d="M52 16 L60 8 L68 16" stroke="#5B8C51" stroke-width="1.5" fill="none"/>
+                </svg>
             </div>
 
-            <!-- Tab Contents -->
-            <div class="tab-content-wrapper">
-                <!-- Tab 1: Arsitektur -->
-                <div class="tab-content active" id="arsitektur">
-                    <h2 class="tab-title">Filosofi Arsitektur Wetu Telu</h2>
-                    <p class="tab-text">
-                        Arsitektur tradisional di Bayan memiliki makna filosofis yang mendalam, mencerminkan konsep <strong>Wetu Telu</strong> dan harmoni alam. Setiap elemen bangunan tidak hanya berfungsi secara fisik, tetapi juga spiritual:
-                    </p>
-                    <ul class="tab-list">
-                        <li><strong>Pondasi Batu Kali:</strong> Melambangkan keteguhan dan pijakan yang kuat pada bumi, serta pengingat akan pentingnya menjaga keseimbangan dengan alam bawah.</li>
-                        <li><strong>Dinding Bambu:</strong> Menyimbolkan fleksibilitas, kesederhanaan, dan keterbukaan masyarakat adat dalam menerima perubahan tanpa kehilangan jati diri.</li>
-                        <li><strong>Tiang Kayu:</strong> Sebagai simbol manusia yang berdiri tegak menghubungkan bumi dan langit (Sang Pencipta), serta lambang kepemimpinan dan kekokohan adat.</li>
-                    </ul>
+            <!-- Tab Container -->
+            <div class="bh-tabs__container bh-reveal delay-1">
+
+                <!-- Tab Navigation Buttons -->
+                <div class="bh-tabs__nav" role="tablist" aria-label="Panduan Wisata Budaya">
+                    <button class="bh-tabs__btn active" role="tab" 
+                            id="tab-arsitektur" aria-selected="true" 
+                            aria-controls="panel-arsitektur" data-target="panel-arsitektur">
+                        <span class="bh-tabs__btn-icon">🏛️</span>
+                        <span class="bh-tabs__btn-label">Arsitektur Wetu Telu</span>
+                        <span class="bh-tabs__btn-bar"></span>
+                    </button>
+                    <button class="bh-tabs__btn" role="tab" 
+                            id="tab-pakaian" aria-selected="false" 
+                            aria-controls="panel-pakaian" data-target="panel-pakaian">
+                        <span class="bh-tabs__btn-icon">👘</span>
+                        <span class="bh-tabs__btn-label">Tata Tertib Pakaian</span>
+                        <span class="bh-tabs__btn-bar"></span>
+                    </button>
+                    <button class="bh-tabs__btn" role="tab" 
+                            id="tab-maulid" aria-selected="false" 
+                            aria-controls="panel-maulid" data-target="panel-maulid">
+                        <span class="bh-tabs__btn-icon">🌙</span>
+                        <span class="bh-tabs__btn-label">Acara Maulid Adat</span>
+                        <span class="bh-tabs__btn-bar"></span>
+                    </button>
+                    <button class="bh-tabs__btn" role="tab" 
+                            id="tab-pantangan" aria-selected="false" 
+                            aria-controls="panel-pantangan" data-target="panel-pantangan">
+                        <span class="bh-tabs__btn-icon">⚠️</span>
+                        <span class="bh-tabs__btn-label">Pantangan &amp; Sanksi</span>
+                        <span class="bh-tabs__btn-bar"></span>
+                    </button>
                 </div>
 
-                <!-- Tab 2: Pakaian Adat -->
-                <div class="tab-content" id="pakaian-adat">
-                    <h2 class="tab-title">Tata Tertib Pakaian Adat Sasak</h2>
-                    <p class="tab-text">
-                        Memasuki area suci atau mengikuti prosesi adat di Bayan mewajibkan penggunaan pakaian adat Sasak yang memiliki makna kesopanan dan penghormatan yang tinggi.
-                    </p>
-                    <ul class="tab-list">
-                        <li><strong>Dodot:</strong> Kain kemben atau sabuk kain yang diikatkan di pinggang. Penggunaan dodot melambangkan pengendalian diri dan pengikat hawa nafsu duniawi.</li>
-                        <li><strong>Jong:</strong> Ikat kepala khas yang wajib dikenakan. Jong melambangkan kehormatan, pikiran yang bersih, dan ketaatan kepada Sang Pencipta serta leluhur.</li>
-                    </ul>
-                </div>
+                <!-- Tab Panels -->
+                <div class="bh-tabs__panels">
 
-                <!-- Tab 3: Maulid Adat -->
-                <div class="tab-content" id="maulid-adat">
-                    <h2 class="tab-title">Keunikan Maulid Adat Bayan</h2>
-                    <p class="tab-text">
-                        Perayaan Maulid di Bayan memiliki keunikan tersendiri, terutama dalam penentuan jadwal dan tata cara pelaksanaannya yang sangat sakral.
-                    </p>
-                    <p class="tab-text" style="margin-top: 12px;">
-                        Jadwal perayaan tidak semata-mata merujuk pada kalender Hijriah secara umum, melainkan menggunakan <strong>sistem penanggalan adat Bayan</strong> yang dipadukan dengan tanda-tanda alam. Hal ini membuat waktu pelaksanaan Maulid Adat biasanya berselisih dengan kalender nasional. Perayaan ini dipusatkan di Masjid Kuno Bayan Beleq dan diisi dengan ritual mencuci benda pusaka, menumbuk padi, serta doa bersama.
-                    </p>
-                </div>
+                    <!-- ─── Panel 1: Arsitektur Wetu Telu ─── -->
+                    <div class="bh-tabs__panel active" role="tabpanel" 
+                         id="panel-arsitektur" aria-labelledby="tab-arsitektur">
+                        <div class="bh-tabs__panel-inner">
+                            <h3 class="bh-tabs__title">Arsitektur Wetu Telu</h3>
+                            <p class="bh-tabs__text">
+                                Bangunan <strong>Masjid Kuno Bayan Beleq</strong> memiliki tiga unsur 
+                                arsitektur utama yang sarat akan makna spiritual mendalam. Setiap 
+                                bagian bangunan melambangkan tahapan perjalanan rohani manusia menuju 
+                                Sang Pencipta:
+                            </p>
 
-                <!-- Tab 4: Larangan -->
-                <div class="tab-content" id="larangan">
-                    <h2 class="tab-title">Larangan bagi Wisatawan</h2>
-                    <p class="tab-text">
-                        Untuk menjaga kelestarian dan kesucian nilai adat Bayan, terdapat beberapa pantangan ketat yang wajib dipatuhi oleh setiap pengunjung:
-                    </p>
-                    <ul class="tab-list">
-                        <li><strong>Larangan Masuk bagi Wanita Haid:</strong> Wanita yang sedang dalam masa menstruasi dilarang keras memasuki area suci seperti Masjid Kuno Bayan untuk menjaga kebersihannya.</li>
-                        <li><strong>Kewajiban Menjaga Tata Krama:</strong> Pengunjung wajib berbicara dengan sopan, dilarang mengucapkan kata-kata kasar, serta harus menunjukkan rasa hormat kepada adat setempat.</li>
-                        <li><strong>Larangan Merusak Area Suci:</strong> Dilarang keras mengambil, memindahkan, atau merusak benda apapun di kawasan situs adat dan hutan adat.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+                            <div class="bh-tabs__card-group">
+                                <div class="bh-tabs__card">
+                                    <div class="bh-tabs__card-accent"></div>
+                                    <div class="bh-tabs__card-body">
+                                        <h4 class="bh-tabs__card-title">
+                                            <span class="bh-tabs__card-num">01</span>
+                                            Kaki — Pondasi Batu Kali
+                                        </h4>
+                                        <p class="bh-tabs__card-text">
+                                            Melambangkan <strong>Syariat</strong> dan tempat manusia berpijak 
+                                            di bumi. Pondasi batu kali sungai yang kokoh menjadi simbol 
+                                            keteguhan iman serta fondasi kehidupan beragama yang kuat.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="bh-tabs__card">
+                                    <div class="bh-tabs__card-accent"></div>
+                                    <div class="bh-tabs__card-body">
+                                        <h4 class="bh-tabs__card-title">
+                                            <span class="bh-tabs__card-num">02</span>
+                                            Badan — Dinding Bambu
+                                        </h4>
+                                        <p class="bh-tabs__card-text">
+                                            Merupakan ruang transisi (<strong>Tariqat</strong> dan 
+                                            <strong>Hakikat</strong>) untuk membersihkan diri dari segala 
+                                            urusan duniawi. Dinding bambu yang sederhana melambangkan 
+                                            kerendahan hati dan kesucian niat.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="bh-tabs__card">
+                                    <div class="bh-tabs__card-accent"></div>
+                                    <div class="bh-tabs__card-body">
+                                        <h4 class="bh-tabs__card-title">
+                                            <span class="bh-tabs__card-num">03</span>
+                                            Atap — Molo-molo
+                                        </h4>
+                                        <p class="bh-tabs__card-text">
+                                            Meruncing ke atas melambangkan <strong>Makrifat</strong>, 
+                                            <strong>Tauhid</strong>, dan hubungan langsung dengan 
+                                            <strong>Allah SWT</strong>. Puncak atap yang mengerucut 
+                                            menggambarkan fokus total manusia kepada keesaan Tuhan.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ─── Panel 2: Tata Tertib Pakaian ─── -->
+                    <div class="bh-tabs__panel" role="tabpanel" 
+                         id="panel-pakaian" aria-labelledby="tab-pakaian">
+                        <div class="bh-tabs__panel-inner">
+                            <h3 class="bh-tabs__title">Tata Tertib Pakaian</h3>
+                            <p class="bh-tabs__text">
+                                Aturan berpakaian dalam tradisi adat Sasak di kawasan Bayan bukan 
+                                sekadar formalitas, melainkan wujud penghormatan spiritual yang 
+                                mendalam. Setiap helai kain mengandung makna filosofis tersendiri.
+                            </p>
+
+                            <!-- Laki-Laki -->
+                            <div class="bh-tabs__split-card">
+                                <div class="bh-tabs__split-header">
+                                    <span class="bh-tabs__split-icon">♂</span>
+                                    <h4>Aturan Pakaian Laki-laki</h4>
+                                </div>
+                                <ul class="bh-tabs__list">
+                                    <li>
+                                        <strong>Dodot</strong> (kain tenun pinggang) — Wajib dikenakan 
+                                        sebagai pengikat di area pinggang. Dodot melambangkan kemampuan 
+                                        laki-laki untuk <em>menahan hawa nafsu</em> dan menjaga 
+                                        kesucian diri selama berada di kawasan sakral.
+                                    </li>
+                                    <li>
+                                        <strong>Sapuk</strong> (ikat kepala) — Wajib dikenakan agar 
+                                        pikiran tetap <em>fokus kepada Sang Pencipta</em>. Sapuk 
+                                        menjadi simbol konsentrasi spiritual dan ketundukan kepada 
+                                        Tuhan Yang Maha Esa.
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- Perempuan -->
+                            <div class="bh-tabs__split-card">
+                                <div class="bh-tabs__split-header">
+                                    <span class="bh-tabs__split-icon">♀</span>
+                                    <h4>Aturan Pakaian Perempuan</h4>
+                                </div>
+                                <ul class="bh-tabs__list">
+                                    <li>
+                                        <strong>Kemben / Selendang</strong> — Wajib dikenakan untuk 
+                                        <em>melindungi kesucian hati</em>. Kemben menutup dada dan 
+                                        bahu sebagai bentuk kesopanan tertinggi di hadapan Yang Maha Kuasa.
+                                    </li>
+                                    <li>
+                                        <strong>Kain Tenun Panjang</strong> — Dikenakan sebagai bawahan, 
+                                        melambangkan <em>kerendahan hati</em> dan penghormatan terhadap 
+                                        bumi serta para leluhur.
+                                    </li>
+                                </ul>
+                                <div class="bh-tabs__warning-inline">
+                                    <span>⛔</span>
+                                    <p>
+                                        <strong>Dilarang keras</strong> menggunakan perhiasan emas atau 
+                                        perak yang mencolok di kawasan sakral. Hal ini dianggap 
+                                        bertentangan dengan nilai kesederhanaan adat.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ─── Panel 3: Acara Maulid Adat ─── -->
+                    <div class="bh-tabs__panel" role="tabpanel" 
+                         id="panel-maulid" aria-labelledby="tab-maulid">
+                        <div class="bh-tabs__panel-inner">
+                            <h3 class="bh-tabs__title">Acara Maulid Adat</h3>
+                            <p class="bh-tabs__text">
+                                Jadwal pelaksanaan Maulid Adat di Desa Bayan ditentukan oleh 
+                                <strong>kalender Wariga Sereat (Rowot)</strong>, sebuah sistem 
+                                penanggalan tradisional yang berbeda dengan kalender Hijriah pada 
+                                umumnya. Waktu pelaksanaan bergantung pada perhitungan adat yang 
+                                dipadukan dengan tanda-tanda alam.
+                            </p>
+
+                            <!-- Prosesi Terbuka -->
+                            <div class="bh-tabs__prosesi-card bh-tabs__prosesi--open">
+                                <div class="bh-tabs__prosesi-badge">✅ Terbuka untuk Wisatawan</div>
+                                <h4>Prosesi yang Dapat Disaksikan</h4>
+                                <ul class="bh-tabs__list">
+                                    <li>
+                                        <strong>Menutu</strong> — Prosesi menumbuk padi secara 
+                                        tradisional yang dilakukan bersama-sama oleh warga desa 
+                                        sebagai simbol gotong royong dan keberkahan.
+                                    </li>
+                                    <li>
+                                        <strong>Peresean</strong> — Pertarungan tradisional 
+                                        menggunakan tongkat rotan dan perisai kulit kerbau, 
+                                        menunjukkan keberanian dan ketangguhan pria Sasak.
+                                    </li>
+                                    <li>
+                                        <strong>Arak-arakan Praja Mulud</strong> — Prosesi membawa 
+                                        <em>Ancak</em> (wadah sesaji dari bambu) yang dihias 
+                                        dan diarak keliling desa dengan iringan gamelan.
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- Prosesi Tertutup -->
+                            <div class="bh-tabs__prosesi-card bh-tabs__prosesi--closed">
+                                <div class="bh-tabs__prosesi-badge bh-tabs__prosesi-badge--closed">🚫 Tertutup untuk Wisatawan</div>
+                                <h4>Prosesi Sakral — Area Terbatas</h4>
+                                <ul class="bh-tabs__list bh-tabs__list--warning">
+                                    <li>
+                                        Wisatawan <strong>dilarang memasuki area Kampu</strong> 
+                                        (kawasan inti tempat upacara tertinggi berlangsung).
+                                    </li>
+                                    <li>
+                                        Wisatawan <strong>dilarang mendekati mata air suci</strong> 
+                                        yang digunakan untuk ritual pemurnian.
+                                    </li>
+                                    <li>
+                                        Wisatawan <strong>dilarang mengikuti Doa Puncak</strong> 
+                                        yang diselenggarakan di dalam masjid oleh para pemangku adat.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ─── Panel 4: Pantangan & Sanksi ─── -->
+                    <div class="bh-tabs__panel" role="tabpanel" 
+                         id="panel-pantangan" aria-labelledby="tab-pantangan">
+                        <div class="bh-tabs__panel-inner">
+                            <h3 class="bh-tabs__title">Pantangan &amp; Sanksi</h3>
+                            <p class="bh-tabs__text">
+                                Kawasan Masjid Kuno Bayan Beleq dijaga oleh hukum adat yang ketat. 
+                                Setiap pelanggaran dipercaya membawa konsekuensi spiritual serius. 
+                                Berikut daftar pantangan yang <strong>wajib dipatuhi</strong> tanpa 
+                                pengecualian:
+                            </p>
+
+                            <div class="bh-tabs__pantangan-list">
+                                <div class="bh-tabs__pantangan-item bh-tabs__pantangan--critical">
+                                    <div class="bh-tabs__pantangan-marker">
+                                        <span>1</span>
+                                    </div>
+                                    <div class="bh-tabs__pantangan-body">
+                                        <h4>Larangan bagi Perempuan Haid / Nifas</h4>
+                                        <p>
+                                            Perempuan yang sedang dalam masa haid atau nifas 
+                                            <strong>dilarang keras</strong> memasuki pelataran masjid, 
+                                            area pemakaman leluhur, maupun mata air suci. Ini merupakan 
+                                            pantangan tertinggi dalam adat Bayan.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="bh-tabs__pantangan-item bh-tabs__pantangan--critical">
+                                    <div class="bh-tabs__pantangan-marker">
+                                        <span>2</span>
+                                    </div>
+                                    <div class="bh-tabs__pantangan-body">
+                                        <h4>Larangan Memasuki Bangunan Utama</h4>
+                                        <p>
+                                            Wisatawan <strong>dilarang masuk</strong> ke bangunan utama 
+                                            masjid atau melangkahi area makam tanpa izin resmi dari 
+                                            pemangku adat. Setiap kunjungan ke area inti harus 
+                                            didampingi oleh juru kunci.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="bh-tabs__pantangan-item">
+                                    <div class="bh-tabs__pantangan-marker">
+                                        <span>3</span>
+                                    </div>
+                                    <div class="bh-tabs__pantangan-body">
+                                        <h4>Larangan Perilaku Tidak Pantas</h4>
+                                        <p>
+                                            <strong>Dilarang</strong> mengucapkan kata-kata kotor, 
+                                            merusak lingkungan sekitar situs, atau bermesraan di 
+                                            dalam kawasan adat. Perilaku ini dianggap mencemarkan 
+                                            kesucian tempat.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="bh-tabs__pantangan-item bh-tabs__pantangan--sanksi">
+                                    <div class="bh-tabs__pantangan-marker bh-tabs__pantangan-marker--sanksi">
+                                        <span>⚡</span>
+                                    </div>
+                                    <div class="bh-tabs__pantangan-body">
+                                        <h4>Sanksi: Kepemaliq</h4>
+                                        <p>
+                                            Pelanggar pantangan dipercaya dapat terkena 
+                                            <strong><em>kepemaliq</em></strong> — sanksi gaib berupa 
+                                            malapetaka, sakit yang tidak dapat dijelaskan secara medis, 
+                                            atau nasib buruk yang terus-menerus. Untuk memulihkan diri, 
+                                            pelanggar <strong>wajib meminta maaf secara adat</strong> 
+                                            melalui upacara khusus yang dipimpin oleh tetua adat 
+                                            dengan menyertakan sesaji tertentu.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div><!-- /.bh-tabs__panels -->
+
+            </div><!-- /.bh-tabs__container -->
+
+        </div><!-- /.bh-tabs__inner -->
     </section>
 
 
@@ -337,16 +477,15 @@
 
 
     <!-- ═══════════════════════════════════════════
-         SCRIPT — Scroll Effects (Vanilla JS)
+         SCRIPT — Scroll + Tab Logic (Vanilla JS)
     ═══════════════════════════════════════════ -->
     <script>
     (function() {
         'use strict';
 
-        // ── Scroll-triggered reveal animation ──
-        const revealElements = document.querySelectorAll('.bh-reveal');
-        
-        const revealObserver = new IntersectionObserver(function(entries) {
+        /* ── Scroll-triggered reveal animation ── */
+        var revealElements = document.querySelectorAll('.bh-reveal');
+        var revealObserver = new IntersectionObserver(function(entries) {
             entries.forEach(function(entry) {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
@@ -359,7 +498,7 @@
             revealObserver.observe(el);
         });
 
-        // ── Navbar scroll effect ──
+        /* ── Navbar scroll effect ── */
         var nav = document.getElementById('bh-mainNav');
         if (nav) {
             window.addEventListener('scroll', function() {
@@ -371,7 +510,22 @@
             });
         }
 
-        // ── Smooth scroll for anchor links ──
+        /* ── Mobile hamburger toggle ── */
+        var navToggle = document.getElementById('bh-navToggle');
+        var navLinks = document.getElementById('bh-navLinks');
+        if (navToggle && navLinks) {
+            navToggle.addEventListener('click', function() {
+                navLinks.classList.toggle('open');
+            });
+            // Close menu when a link is clicked
+            navLinks.querySelectorAll('a').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    navLinks.classList.remove('open');
+                });
+            });
+        }
+
+        /* ── Smooth scroll for anchor links ── */
         document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
             anchor.addEventListener('click', function(e) {
                 var target = document.querySelector(this.getAttribute('href'));
@@ -382,24 +536,56 @@
             });
         });
 
-        // ── Tab Navigation Logic ──
-        const tabButtons = document.querySelectorAll('.tab-btn');
-        const tabContents = document.querySelectorAll('.tab-content');
+        /* ── Premium Tab Navigation Logic ── */
+        var tabButtons = document.querySelectorAll('.bh-tabs__btn');
+        var tabPanels  = document.querySelectorAll('.bh-tabs__panel');
 
         if (tabButtons.length > 0) {
-            tabButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    tabButtons.forEach(btn => btn.classList.remove('active'));
-                    tabContents.forEach(content => content.classList.remove('active'));
-                    button.classList.add('active');
-                    const targetId = button.getAttribute('data-target');
-                    const targetContent = document.getElementById(targetId);
-                    if (targetContent) {
-                        targetContent.classList.add('active');
+            tabButtons.forEach(function(button) {
+                button.addEventListener('click', function() {
+                    var targetId = this.getAttribute('data-target');
+
+                    // Deactivate all
+                    tabButtons.forEach(function(btn) {
+                        btn.classList.remove('active');
+                        btn.setAttribute('aria-selected', 'false');
+                    });
+                    tabPanels.forEach(function(panel) {
+                        panel.classList.remove('active');
+                        panel.classList.remove('bh-tabs__panel--animating');
+                    });
+
+                    // Activate clicked
+                    this.classList.add('active');
+                    this.setAttribute('aria-selected', 'true');
+                    var targetPanel = document.getElementById(targetId);
+                    if (targetPanel) {
+                        targetPanel.classList.add('active');
+                        // Re-trigger animation
+                        void targetPanel.offsetWidth;
+                        targetPanel.classList.add('bh-tabs__panel--animating');
+                    }
+                });
+
+                // Keyboard navigation (arrow keys)
+                button.addEventListener('keydown', function(e) {
+                    var index = Array.from(tabButtons).indexOf(this);
+                    var newIndex = index;
+                    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+                        newIndex = (index + 1) % tabButtons.length;
+                        e.preventDefault();
+                    } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+                        newIndex = (index - 1 + tabButtons.length) % tabButtons.length;
+                        e.preventDefault();
+                    }
+                    if (newIndex !== index) {
+                        tabButtons[newIndex].focus();
+                        tabButtons[newIndex].click();
                     }
                 });
             });
         }
+
     })();
     </script>
 

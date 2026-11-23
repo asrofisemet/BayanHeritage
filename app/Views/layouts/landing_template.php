@@ -15,12 +15,12 @@
 
 <?= $this->renderSection('content'); ?>
 
-<footer class="text-white py-10 px-5 text-center" style="background: linear-gradient(to top, #3A5535, #4A6741);">
+<footer class="text-white py-10 px-5 md:px-12 lg:px-20 text-center" style="background: linear-gradient(to top, #3A5535, #4A6741);">
     <h3 class="text-3xl font-extrabold mb-5">Contact Us</h3>
     <p class="my-2.5 text-base flex justify-center items-center gap-2"> 
-        <i class="fab fa-twitter"></i> X: lombokrec |
-        <i class="fas fa-envelope"></i> email: lombokrec@gmail.com |
-        <i class="fab fa-instagram"></i> IG: lombokrec
+        <i class="fab fa-twitter"></i> X: bayanheritage |
+        <i class="fas fa-envelope"></i> email: bayanheritage@gmail.com |
+        <i class="fab fa-instagram"></i> IG: bayanheritage
     </p>
     <p class="my-2.5 text-base font-bold">Thank you for visiting our page, hope this website helps you make your itinerary on Lombok</p>
 </footer>

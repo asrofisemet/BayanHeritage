@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reset Password | LombokRec</title>
+    <title>Reset Password | Bayan Heritage</title>
     <link href="<?= base_url('css/output.css') ?>" rel="stylesheet">
     <script src="<?= base_url('js/forgotPassword.js') ?>" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>

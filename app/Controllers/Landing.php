@@ -20,7 +20,7 @@ class Landing extends BaseController
         $promoModel = new PromoModel();   
 
         $data = [
-            'title'              => 'Lombok Recommendation',
+            'title'              => 'Bayan Heritage — Wisata Budaya Bayan',
             'show_detail_tempat' => false, 
             'tempat'             => null,
             'reviews'            => null,

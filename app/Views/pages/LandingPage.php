@@ -7,14 +7,14 @@
         <div class="absolute inset-0 bg-black/30 pointer-events-none"></div>
 
         <!-- Green Glassmorphism Navigation -->
-        <nav class="top-nav flex justify-between items-center px-8 py-3 bg-bh-primary\/90 backdrop-blur-md rounded-full shadow-lg border border-white/30 relative z-10 mt-2 mx-2 md:mx-10">
-            <div class="text-2xl font-bold font-josefin tracking-wider">
+        <nav class="top-nav flex justify-between items-center px-4 sm:px-8 py-3 bg-bh-primary\/90 backdrop-blur-md rounded-full shadow-lg border border-white/30 relative z-10 mt-2 mx-2 md:mx-10">
+            <div class="text-xl sm:text-2xl font-bold font-josefin tracking-wider">
                 Bayan Heritage
             </div>
-            <div class="space-x-4 md:space-x-6 flex items-center">
-                <a href="<?= base_url('login') ?>" class="text-white no-underline text-xl font-bold hover:text-bh-accent transition-colors drop-shadow-md">Login</a>
-                <span class="text-white/60 text-xl font-bold">|</span>
-                <a href="<?= base_url('signup') ?>" class="text-white no-underline text-xl font-bold hover:text-bh-accent transition-colors drop-shadow-md">Sign Up</a>
+            <div class="space-x-3 sm:space-x-6 flex items-center">
+                <a href="<?= base_url('login') ?>" class="text-white no-underline text-base sm:text-xl font-bold hover:text-bh-accent transition-colors drop-shadow-md">Login</a>
+                <span class="text-white/60 text-base sm:text-xl font-bold">|</span>
+                <a href="<?= base_url('signup') ?>" class="text-white no-underline text-base sm:text-xl font-bold hover:text-bh-accent transition-colors drop-shadow-md">Sign Up</a>
             </div>
         </nav>
 
@@ -25,10 +25,10 @@
         </div>
     </div>
 
-    <div class="about py-10 text-bh-text text-center max-w-6xl mx-auto px-4 font-josefin">  <h2 class="text-5xl font-bold mb-2">About Masjid Kuno Bayan</h2>
+    <div class="about py-10 text-bh-text text-center max-w-full mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-32 font-josefin">  <h2 class="text-5xl font-bold mb-2">About Masjid Kuno Bayan</h2>
         <p class="mb-5 text-lg leading-normal">Masjid Kuno Bayan (Bayan Ancient Mosque) is a historical landmark and the oldest mosque on the island of Lombok, Indonesia. Built in the 17th century, it stands as a symbol of the harmonious blend between early Islamic teachings and the indigenous Sasak culture. The mosque is characterized by its traditional architecture, featuring a bamboo structure, a thatched roof, and a foundation made of river stones. To this day, it remains a sacred site where unique religious and cultural ceremonies, such as the Maulid Adat, are beautifully preserved.</p>
-        <div class="video-container mt-5 flex justify-center">
-            <video controls autoplay muted loop class="w-11/12 max-w-[1000px] rounded-lg">
+        <div class="video-container mt-5 flex justify-center w-full px-2">
+            <video controls autoplay muted loop class="w-full max-w-5xl rounded-2xl shadow-xl">
                 <source src="<?= base_url('Assets/videoLombok.mp4') ?>" type="video/mp4"> Your browser does not support the video.
             </video>
         </div>
@@ -49,7 +49,7 @@
 
         .bh-tab-section {
             background-color: #f3f4f6;
-            padding: 80px 20px;
+            padding: clamp(40px, 8vw, 80px) clamp(16px, 5vw, 60px);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -61,8 +61,9 @@
             box-shadow: 0 10px 25px rgba(4, 120, 87, 0.1);
             overflow: hidden;
             width: 100%;
-            max-width: 1000px;
+            max-width: 100%;
             margin: 0 auto;
+            padding: 0 clamp(0px, 2vw, 20px);
         }
 
         .tab-buttons {
@@ -99,7 +100,7 @@
         }
 
         .tab-content-wrapper {
-            padding: 40px;
+            padding: clamp(24px, 4vw, 48px);
         }
 
         .tab-content {
@@ -113,7 +114,7 @@
 
         .tab-title {
             font-family: 'Playfair Display', serif;
-            font-size: 2.2rem;
+            font-size: clamp(1.6rem, 3vw, 2.5rem);
             color: var(--color-emerald);
             margin-top: 0;
             margin-bottom: 20px;
@@ -157,6 +158,25 @@
             .tab-btn.active { border-left: 4px solid var(--color-emerald-light); }
             .tab-content-wrapper { padding: 24px; }
             .tab-title { font-size: 1.8rem; }
+        }
+
+        /* Large screens — extend content */
+        @media (min-width: 1280px) {
+            .tab-content-wrapper { padding: 48px 60px; }
+            .tab-title { font-size: 2.5rem; }
+            .tab-text { font-size: 1.08rem; }
+            .tab-list { font-size: 1.05rem; }
+        }
+
+        @media (min-width: 1536px) {
+            .bh-tab-section { padding: 100px 80px; }
+            .tab-content-wrapper { padding: 56px 80px; }
+            .tab-title { font-size: 2.8rem; }
+        }
+
+        @media (min-width: 1920px) {
+            .bh-tab-section { padding: 120px 120px; }
+            .tab-content-wrapper { padding: 64px 100px; }
         }
     </style>
 
@@ -247,7 +267,7 @@
          LOKASI & AKSES SECTION
     ═══════════════════════════════════════════ -->
     <section class="bh-lokasi-akses-section py-20" style="background-color: #f0fdf4;" id="lokasi">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-full mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-32">
             <h2 class="text-4xl md:text-5xl font-bold text-center mb-12" style="font-family: 'Playfair Display', serif; color: #064e3b;">
                 Lokasi & Akses
             </h2>
@@ -323,7 +343,7 @@
                 </div>
             </div>
         <?php else : ?>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 font-josefin">
+        <div class="max-w-full mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-32 font-josefin">
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-bold text-bh-primary mb-6">Sacred Tombs of Bayan</h2>
                 <p class="text-lg md:text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
